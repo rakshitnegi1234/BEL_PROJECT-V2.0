@@ -5,11 +5,13 @@ import { buildVectorStore } from "./Vector.js";
 import { closeConnections } from "./Config.js";
 
 async function runIndexing(pdfPath) {
-  console.log("===========================================");
-  console.log("   🎬 GraphRAG Indexing Pipeline");
-  console.log("===========================================\n");
+
+  console.log("==========================");
+  console.log("GraphRAG Indexing Pipeline");
+  console.log("========================\n");
 
   try {
+    
     console.log("── STEP 1: Parse PDF Locally ──");
     const rawText = await parsePDF(pdfPath);
 

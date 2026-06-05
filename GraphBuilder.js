@@ -1,6 +1,7 @@
 import { driver } from "./Config.js";
 
 async function insertMovieGraph(entity) {
+
   const session = driver.session();
   try {
     await session.executeWrite(async (tx) => {
@@ -74,7 +75,7 @@ async function insertMovieGraph(entity) {
 }
 
 async function buildGraph(entities) {
-  console.log(`\n🔨 Building graph for ${entities.length} movies...\n`);
+  console.log(`\nBuilding graph for ${entities.length} movies...\n`);
   
   const session = driver.session();
   try {

@@ -1,6 +1,7 @@
 import { embedTexts, pineconeIndex } from "./Config.js";
 
 // A small helper function to pause the code
+
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 function createEmbeddingText(entity) {

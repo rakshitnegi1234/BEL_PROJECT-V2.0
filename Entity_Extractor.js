@@ -23,7 +23,8 @@ Rules:
 // 1. Helper Function: Process a SINGLE batch with its own retry logic
 async function extractBatch(textChunk, batchNum, attempt = 1) {
   const maxRetries = 3;
-  console.log(`   📤 Sending Batch ${batchNum} to Mistral (Attempt ${attempt}/${maxRetries})...`);
+
+  console.log(`Sending Batch ${batchNum} to Mistral (Attempt ${attempt}/${maxRetries})...`);
   
   try {
     const jsonText = await invokeLLM(EXTRACTION_PROMPT, textChunk);
@@ -43,11 +44,12 @@ async function extractBatch(textChunk, batchNum, attempt = 1) {
     }
     
     console.error(`❌ Batch ${batchNum} failed completely after 3 attempts. Skipping to next batch.`);
-    return []; // Return empty array so the whole process doesn't crash
+    return [];
   }
 }
 
 // 2. Main Function: Split the text and orchestrate the batches
+
 async function extractAllEntities(rawPdfText) {
   // Step A: Split the giant string using the PDF's dashed lines
   const rawMovies = rawPdfText.split(/----------------------------------------/);
@@ -61,6 +63,7 @@ async function extractAllEntities(rawPdfText) {
   let allExtractedMovies = [];
 
   // Step C: Loop through the movies in batches of 20
+  
   for (let i = 0; i < validMovies.length; i += batchSize) {
     const batchTextArray = validMovies.slice(i, i + batchSize);
     
