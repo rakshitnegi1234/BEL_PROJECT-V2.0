@@ -49,7 +49,7 @@ async function invokeLLM(systemPrompt, userPrompt) {
     return content;
 
   } catch (error) {
-    console.error("❌ LLM Error:", error.response?.data || error.message);
+    console.error("LLM Error:", error.response?.data || error.message);
     throw error;
   }
 }
@@ -75,7 +75,7 @@ async function embedTexts(texts) {
 
 async function closeConnections() {
   await driver.close();
-  console.log("✅ All database connections closed.");
+  console.log("All database connections closed.");
 }
 
 export { driver, pineconeIndex, invokeLLM, embedText, embedTexts, closeConnections };
