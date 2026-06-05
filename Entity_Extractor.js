@@ -38,12 +38,12 @@ async function extractBatch(textChunk, batchNum, attempt = 1) {
 
   } catch (err) {
     if (attempt < maxRetries) {
-        console.warn(`   ⚠️ Batch ${batchNum} failed: ${err.message}. Retrying in 10s...`);
+        console.warn(`Batch ${batchNum} failed: ${err.message}. Retrying in 10s...`);
         await new Promise((r) => setTimeout(r, 10000));
         return extractBatch(textChunk, batchNum, attempt + 1);
     }
     
-    console.error(`❌ Batch ${batchNum} failed completely after 3 attempts. Skipping to next batch.`);
+    console.error(`Batch ${batchNum} failed completely after 3 attempts. Skipping to next batch.`);
     return [];
   }
 }
@@ -57,7 +57,7 @@ async function extractAllEntities(rawPdfText) {
   // Step B: Filter out any empty chunks or tiny fragments
   const validMovies = rawMovies.filter(text => text.trim().length > 50);
 
-  console.log(`\n🧩 Split PDF into ${validMovies.length} individual movie text blocks.`);
+  console.log(`\nSplit PDF into ${validMovies.length} individual movie text blocks.`);
 
   const batchSize = 20; // 20 movies per request is very safe for LLM output limits
   let allExtractedMovies = [];
@@ -77,10 +77,10 @@ async function extractAllEntities(rawPdfText) {
     
     // Combine results
     allExtractedMovies = allExtractedMovies.concat(extractedBatch);
-    console.log(`   ✅ Batch ${batchNum} completed. Total extracted so far: ${allExtractedMovies.length}`);
+    console.log(`Batch ${batchNum} completed. Total extracted so far: ${allExtractedMovies.length}`);
   }
 
-  console.log(`\n🎉 Finished extraction! Total movies successfully processed: ${allExtractedMovies.length}`);
+  console.log(`\nFinished extraction. Total movies successfully processed: ${allExtractedMovies.length}`);
   return allExtractedMovies;
 }
 

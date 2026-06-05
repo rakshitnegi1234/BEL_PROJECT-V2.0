@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "node TestConnections.js",
-    "index" : "node RunIndexing.js"
+    "index": "node RunIndexing.js",
+    "query": "node RunQuery.js"
   },
   "author": "",
   "license": "ISC",
