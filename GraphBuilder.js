@@ -3,8 +3,10 @@ import { driver } from "./Config.js";
 async function insertMovieGraph(entity) {
 
   const session = driver.session();
+
   try {
     await session.executeWrite(async (tx) => {
+      
       // Movie node
       await tx.run(
         `MERGE (m:Movie {title: $title}) SET m.year = $year`,
@@ -78,6 +80,7 @@ async function buildGraph(entities) {
   console.log(`\nBuilding graph for ${entities.length} movies...\n`);
   
   const session = driver.session();
+
   try {
     // Indexes speed up the MERGE operations significantly for ALL node types
     await session.run("CREATE INDEX IF NOT EXISTS FOR (m:Movie) ON (m.title)");
@@ -86,7 +89,7 @@ async function buildGraph(entities) {
     await session.run("CREATE INDEX IF NOT EXISTS FOR (g:Genre) ON (g.name)");
     await session.run("CREATE INDEX IF NOT EXISTS FOR (t:Theme) ON (t.name)");
     await session.run("CREATE INDEX IF NOT EXISTS FOR (aw:Award) ON (aw.name, aw.category)");
-    console.log("📇 Indexes created.");
+    console.log("Indexes created.");
   } finally {
     await session.close();
   }
@@ -94,21 +97,11 @@ async function buildGraph(entities) {
   for (let i = 0; i < entities.length; i++) {
     await insertMovieGraph(entities[i]);
     if ((i + 1) % 50 === 0 || i === entities.length - 1) {
-      console.log(`   📊 Inserted ${i + 1}/${entities.length} movies into Neo4j`);
+      console.log(` Inserted ${i + 1}/${entities.length} movies into Neo4j`);
     }
   }
-  
-  // Print stats
-  const statsSession = driver.session();
-  try {
-    const nodeCount = await statsSession.run("MATCH (n) RETURN count(n) AS count");
-    const relCount = await statsSession.run("MATCH ()-[r]->() RETURN count(r) AS count");
-    console.log(`✅ Graph built successfully!`);
-    console.log(`   Nodes: ${nodeCount.records[0].get("count")}`);
-    console.log(`   Relationships: ${relCount.records[0].get("count")}`);
-  } finally {
-    await statsSession.close();
-  }
+
+
 }
 
 export { buildGraph };

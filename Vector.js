@@ -15,23 +15,24 @@ function createEmbeddingText(entity) {
 }
 
 async function buildVectorStore(entities) {
-  console.log(`\n📐 Building vector store for ${entities.length} movies...\n`);
+  console.log(`\n Building vector store for ${entities.length} movies...\n`);
 
   const batchSize = 50; 
 
   for (let i = 0; i < entities.length; i += batchSize) {
     const batch = entities.slice(i, i + batchSize);
-    console.log(`   📦 Embedding batch ${Math.floor(i / batchSize) + 1}...`);
+    console.log(` Embedding batch ${Math.floor(i / batchSize) + 1}...`);
 
     const texts = batch.map((entity) => createEmbeddingText(entity));
     
-    // 🚦 WAIT BEFORE EMBEDDING: 
+
     // If it's not the first batch, wait 15 seconds to let the Gemini rate limit cool down.
+
     if (i > 0) {
       console.log(`   ⏱️  Waiting 15 seconds for Gemini API rate limits...`);
       await sleep(15000); 
     }
-
+         // here giving to gemini embedding model
     const vectors = await embedTexts(texts);
 
     const records = batch.map((entity, idx) => ({
@@ -48,12 +49,13 @@ async function buildVectorStore(entities) {
       },
     }));
 
-    // Wrapped in an object for Pinecone v7
+   // insert into pinecone
+
     await pineconeIndex.upsert({ records: records });
   }
 
   const stats = await pineconeIndex.describeIndexStats();
-  console.log(`✅ Vector store built! Total vectors: ${stats.totalRecordCount}`);
+  console.log(`Vector store built! Total vectors: ${stats.totalRecordCount}`);
 }
 
 export { buildVectorStore };
