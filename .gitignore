@@ -3,3 +3,4 @@ node_modules/
 .venv/
 evaluation/outputs/
 evaluation/__pycache__/
+find.md
