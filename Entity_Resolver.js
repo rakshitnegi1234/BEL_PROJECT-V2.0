@@ -14,7 +14,7 @@ function cleanJson(raw) {
 }
 
 async function extractEntities(query) {
-  
+
   const systemPrompt = `Extract entity names from movie-related queries.
 
 Extract person names, movie titles, genre names, theme names, and award names.
@@ -43,12 +43,15 @@ Return only a JSON array of strings. No markdown.`;
 }
 
 async function resolveEntity(entityName) {
+
   const session = driver.session({ defaultAccessMode: "READ" });
   const matches = [];
 
   try {
     for (const { label, property } of NODE_TYPES) {
+      
       const exactResult = await session.run(
+        
         `MATCH (n:${label})
          WHERE toLower(n.${property}) = toLower($name)
          RETURN n.${property} AS nodeName, labels(n)[0] AS label
@@ -85,6 +88,8 @@ async function resolveEntity(entityName) {
         });
       }
     }
+
+
   } finally {
     await session.close();
   }
@@ -106,6 +111,7 @@ async function resolveQueryEntities(query) {
   }
 
   console.log("Step 2: resolving entities in Neo4j");
+
   const resolved = [];
   const unresolved = [];
 

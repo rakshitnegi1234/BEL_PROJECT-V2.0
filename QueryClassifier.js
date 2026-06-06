@@ -5,21 +5,54 @@ function cleanJson(raw) {
 }
 
 function heuristicClassification(query) {
+  
   const lower = query.toLowerCase();
-  const similarityWords = [
-    "similar",
-    "recommend",
-    "recommendation",
-    "like",
-    "liked",
-    "watch next",
-    "what should i watch",
+
+  const graphPatterns = [
+    "directed by",
+    "acted in",
+    "work in",
+    "worked in",
+    "works in",
+    "work on",
+    "worked on",
+    "works on",
+    "where",
+    "who is",
+    "tell me about",
+    "how many",
+    "list",
+    "show",
+    "with actor",
+    "by director",
+    "won",
   ];
 
-  if (similarityWords.some((word) => lower.includes(word))) {
+  const similarityPatterns = [
+    "similar to",
+    "movies like",
+    "films like",
+    "like inception",
+    "liked",
+    "watch next after",
+    "what should i watch after",
+    "same vibe",
+    "similar vibe",
+    "similar movies",
+    "similar films",
+  ];
+
+  if (graphPatterns.some((pattern) => lower.includes(pattern))) {
+    return {
+      type: "graph",
+      reasoning: "The query asks for movies matching explicit graph facts or entity relationships.",
+    };
+  }
+
+  if (similarityPatterns.some((pattern) => lower.includes(pattern))) {
     return {
       type: "similarity",
-      reasoning: "The query asks for recommendations or movies similar to another movie.",
+      reasoning: "The query asks for movies similar in taste, theme, or viewing preference.",
     };
   }
 
@@ -30,6 +63,7 @@ function heuristicClassification(query) {
 }
 
 async function classifyQuery(query, resolvedEntities) {
+
   const entityContext = resolvedEntities.entities.length > 0
     ? resolvedEntities.entities
         .map((e) => `"${e.searchTerm}" is a ${e.label} with database name "${e.nodeName}"`)
@@ -40,6 +74,7 @@ async function classifyQuery(query, resolvedEntities) {
     ? `\nUnresolved terms: ${resolvedEntities.unresolved.join(", ")}`
     : "";
 
+    
   const systemPrompt = `You classify movie questions for a GraphRAG system.
 
 Resolved entities:
@@ -50,8 +85,45 @@ Return exactly one JSON object:
 or
 {"type":"similarity","reasoning":"one sentence"}
 
-Use "similarity" only when the user asks for recommendations or movies similar to something.
-Use "graph" for factual, count, list, relationship, director, actor, genre, theme, award, or description questions.
+Definitions:
+
+"graph" means the question should be answered from exact stored facts and relationships in Neo4j:
+- who a person is
+- movies by a director
+- movies an actor worked in
+- movies with a genre, theme, award, year, actor, or director
+- counts, lists, filters, descriptions, and relationship/path questions
+- any query using "where", "worked in", "worked on", "directed by", "acted in", "won", "with", "by", "list", "show", "tell me about", or "how many"
+
+"similarity" means the question needs semantic/taste recommendation from Pinecone:
+- movies similar to a movie
+- movies like a movie
+- what to watch next after liking a movie
+- same vibe/style/theme as a movie
+
+Important edge rule:
+If the user says "recommend" but also gives an exact factual condition such as "where Christopher Nolan works", "directed by Nolan", or "with Zendaya", classify as "graph".
+The word "recommend" alone does not mean similarity. Similarity requires "similar", "like", "liked", "same vibe", or "watch next after".
+
+Examples:
+User: "Recommend me movies where Christopher Nolan works"
+Answer: {"type":"graph","reasoning":"The user wants movies connected to Christopher Nolan by stored graph relationships."}
+
+User: "Give me 10 movies where Christopher Nolan worked"
+Answer: {"type":"graph","reasoning":"The user asks for an exact list of movies connected to a person."}
+
+User: "Movies directed by Christopher Nolan"
+Answer: {"type":"graph","reasoning":"The query asks for movies by a specific director."}
+
+User: "Tell me all the movies Zendaya worked on"
+Answer: {"type":"graph","reasoning":"The query asks for movies connected to an actor."}
+
+User: "Movies like Inception"
+Answer: {"type":"similarity","reasoning":"The query asks for movies similar to a known movie."}
+
+User: "I liked Interstellar, what should I watch next?"
+Answer: {"type":"similarity","reasoning":"The query asks for recommendations based on taste similarity."}
+
 Return only JSON. No markdown.`;
 
   try {

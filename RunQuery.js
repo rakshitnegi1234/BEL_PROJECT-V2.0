@@ -14,7 +14,10 @@ async function processQuery(query) {
   const resolved = await resolveQueryEntities(query);
 
   console.log("\nClassification");
+
+
   const classification = await classifyQuery(query, resolved);
+  
   console.log(`Type: ${classification.type}`);
   console.log(`Reason: ${classification.reasoning}`);
 
