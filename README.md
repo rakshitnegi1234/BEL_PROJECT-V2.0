@@ -17,46 +17,9 @@ A vector-only RAG system works for broad similarity, but it struggles with exact
 
 ## Architecture
 
-```text
-movie.pdf
-   |
-   v
-PdfParse.js
-   |
-   v
-Entity_Extractor.js  -- Mistral structured extraction
-   |
-   v
-+--------------------+----------------------+
-|                                           |
-v                                           v
-GraphBuilder.js                            Vector.js
-Neo4j movie graph                          Pinecone vector index
-                                           Gemini embeddings
+```image
+<img width="693" height="499" alt="image" src="https://github.com/user-attachments/assets/b0de8196-c707-4ca1-82fa-9a8119f9993d" />
 
-
-User question
-   |
-   v
-RunQuery.js
-   |
-   v
-Entity_Resolver.js  -- extract and resolve entities against Neo4j
-   |
-   v
-QueryClassifier.js  -- graph vs similarity routing
-   |
-   +-----------------------------+
-   |                             |
-   v                             v
-GraphHander.js                  SimilarityHandler.js
-Neo4j query planning            Pinecone top-k search
-validated Cypher templates      Neo4j enrichment and reranking
-   |                             |
-   +-------------+---------------+
-                 |
-                 v
-          Final natural language answer
 ```
 
 ## Why This Stack
