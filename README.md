@@ -1,4 +1,4 @@
-# BEL_PROJECT V-2.0
+<img width="693" height="499" alt="image" src="https://github.com/user-attachments/assets/e3830076-137c-416b-b67d-c01868c32d67" /># BEL_PROJECT V-2.0
 
 Hybrid GraphRAG movie recommendation and factual query system built with Neo4j, Pinecone, Mistral, and Gemini embeddings.
 
@@ -17,10 +17,13 @@ A vector-only RAG system works for broad similarity, but it struggles with exact
 
 ## Architecture
 
-```image
-<img width="693" height="499" alt="image" src="https://github.com/user-attachments/assets/b0de8196-c707-4ca1-82fa-9a8119f9993d" />
+![Hybrid GraphRAG Architecture](./assets/architecture.png)
 
-```
+The system follows a dual-retrieval architecture. During indexing, the PDF is parsed and passed through Mistral-based structured extraction to generate validated movie entities. These entities are written into Neo4j as a knowledge graph, while compact movie summaries are embedded with Gemini and stored in Pinecone for semantic retrieval.
+
+At query time, the user question is first passed through entity resolution and query classification. Exact factual, relationship, list, and multi-hop questions are routed to the graph path, where a safe query-plan compiler validates the planned traversal before generating read-only Cypher. Similarity and recommendation-style questions are routed to Pinecone, then enriched with Neo4j graph facts and reranked before final response generation.
+
+This design keeps factual answers grounded in explicit graph relationships while still using vector search for semantic similarity and recommendation retrieval.
 
 ## Why This Stack
 
@@ -241,10 +244,3 @@ python evaluation/run_ragas_eval.py --metrics=faithfulness --systems=both
 
 Outputs are written under `evaluation/outputs/`. The final report is in `hallucination.md`.
 
-## Internship Summary
-
-Engineering Intern | June 2025 - July 2025
-
-- Architected a hybrid GraphRAG movie recommendation engine with Neo4j and Pinecone, routing exact factual and multi-hop relationship queries through deterministic Cypher traversal while using vector search for semantic similarity and recommendation retrieval.
-- Built an automated PDF ingestion pipeline that used Mistral-based structured extraction to convert unstructured movie documents into validated JSON entities, then loaded movies, directors, actors, genres, themes, and awards into Neo4j with Cypher `MERGE` for deduplication.
-- Implemented a graph-aware query router, safe query-plan compiler, and RAGAS evaluation workflow, reducing measured hallucination rate from 39.00% in vector-only RAG to 20.26% in vector DB + GraphRAG across a 25-question benchmark.
