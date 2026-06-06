@@ -1,2 +1,5 @@
 .env
 node_modules/
+.venv/
+evaluation/outputs/
+evaluation/__pycache__/
