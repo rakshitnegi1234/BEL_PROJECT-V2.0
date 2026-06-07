@@ -1,0 +1,327 @@
+[
+  {
+    "user_input": "Who directed Movie 0227, and what year was it released?",
+    "retrieved_contexts": [
+      "Movie 0027 is a Action, Mystery movie released in 2008. Directed by Bong Joon-ho. Starring Ryan Gosling, Matthew McConaughey, Al Pacino, Robert De Niro. The movie explores themes of Freedom, Power.",
+      "Movie 0127 is a Mystery movie released in 2007. Directed by Peter Jackson. Starring Robert De Niro, Viola Davis, Elliot Page. The movie explores themes of Morality, Dreams, Power, Reality.",
+      "Movie 0025 is a Action movie released in 1993. Directed by Peter Jackson. Starring Robert De Niro, Zendaya, Denzel Washington, Tom Hardy, Anne Hathaway, Florence Pugh. The movie explores themes of Identity, Time.",
+      "Movie 0087 is a Mystery, Drama movie released in 2006. Directed by Bong Joon-ho. Starring Tom Hardy, Denzel Washington, Jake Gyllenhaal, Charlize Theron, Brad Pitt, Timoth\u00e9e Chalamet. The movie explores themes of Reality, Hope, Fate, Survival.",
+      "Movie 0024 is a Horror movie released in 1995. Directed by Steven Spielberg. Starring Amy Adams, Viola Davis, Joaquin Phoenix, Natalie Portman, Scarlett Johansson, Denzel Washington. The movie explores themes of Survival, Isolation, Corruption."
+    ],
+    "response": "The provided context does not contain enough information.",
+    "reference": "Christopher Nolan directed Movie 0227, released in 2019.",
+    "faithfulness": 0.0
+  },
+  {
+    "user_input": "Which awards did Movie 0006 win?",
+    "retrieved_contexts": [
+      "Movie 0006 is a Fantasy movie released in 2011. Directed by Christopher Nolan. Starring Jake Gyllenhaal, Elliot Page, Robert De Niro, Tom Hardy. The movie explores themes of Survival, Technology.",
+      "Movie 0066 is a Romance, Thriller movie released in 1995. Directed by Peter Jackson. Starring Viola Davis, Elliot Page, Tom Hardy, Timoth\u00e9e Chalamet, Anne Hathaway, Brad Pitt. The movie explores themes of Isolation, Memory.",
+      "Movie 0086 is a Romance, Adventure movie released in 1996. Directed by Martin Scorsese. Starring Ryan Gosling, Robert De Niro, Zendaya, Christian Bale. The movie explores themes of Morality, Power.",
+      "Movie 0076 is a Fantasy, Horror, Crime movie released in 2006. Directed by James Cameron. Starring Matthew McConaughey, Leonardo DiCaprio, Robert De Niro. The movie explores themes of Survival, Reality, Corruption.",
+      "Movie 0087 is a Mystery, Drama movie released in 2006. Directed by Bong Joon-ho. Starring Tom Hardy, Denzel Washington, Jake Gyllenhaal, Charlize Theron, Brad Pitt, Timoth\u00e9e Chalamet. The movie explores themes of Reality, Hope, Fate, Survival."
+    ],
+    "response": "The provided context does not contain enough information.",
+    "reference": "Movie 0006 won Oscar (Best Picture) and Oscar (Best Sound Mixing).",
+    "faithfulness": 0.0
+  },
+  {
+    "user_input": "What genres and themes are listed for Movie 0243?",
+    "retrieved_contexts": [
+      "Movie 0103 is a Action movie released in 1996. Directed by Peter Jackson. Starring Emma Stone, Anne Hathaway, Al Pacino, Zendaya, Ryan Gosling. The movie explores themes of Freedom, Time, Technology, Survival.",
+      "Movie 0024 is a Horror movie released in 1995. Directed by Steven Spielberg. Starring Amy Adams, Viola Davis, Joaquin Phoenix, Natalie Portman, Scarlett Johansson, Denzel Washington. The movie explores themes of Survival, Isolation, Corruption.",
+      "Movie 0143 is a Action, Drama movie released in 2002. Directed by David Fincher. Starring Joseph Gordon-Levitt, Elliot Page, Florence Pugh, Robert De Niro. The movie explores themes of Morality, Isolation, Survival, Corruption.",
+      "Movie 0023 is a Mystery, Action, Adventure movie released in 2000. Directed by Denis Villeneuve. Starring Natalie Portman, Denzel Washington, Brad Pitt. The movie explores themes of Corruption, Love, Identity.",
+      "Movie 0043 is a Psychological Thriller movie released in 2011. Directed by Christopher Nolan. Starring Ryan Gosling, Scarlett Johansson, Zendaya, Florence Pugh. The movie explores themes of Corruption, Isolation."
+    ],
+    "response": "The provided context does not contain enough information.",
+    "reference": "Movie 0243 has genres Psychological Thriller, Adventure, Thriller and themes Technology, Power, Time, Freedom.",
+    "faithfulness": 0.0
+  },
+  {
+    "user_input": "Which director and actors are listed for Movie 0250?",
+    "retrieved_contexts": [
+      "Movie 0150 is a Horror movie released in 2016. Directed by Sofia Coppola. Starring Denzel Washington, Amy Adams, Natalie Portman. The movie explores themes of Morality, Identity.",
+      "Movie 0025 is a Action movie released in 1993. Directed by Peter Jackson. Starring Robert De Niro, Zendaya, Denzel Washington, Tom Hardy, Anne Hathaway, Florence Pugh. The movie explores themes of Identity, Time.",
+      "Movie 0050 is a Psychological Thriller, Thriller movie released in 1992. Directed by Ridley Scott. Starring Jake Gyllenhaal, Matthew McConaughey, Florence Pugh. The movie explores themes of Fate, Morality.",
+      "Movie 0180 is a Drama, Horror movie released in 1997. Directed by Greta Gerwig. Starring Zendaya, Jake Gyllenhaal, Joaquin Phoenix, Ryan Gosling. The movie explores themes of Power, Love, Dreams, Identity.",
+      "Movie 0008 is a Romance movie released in 1991. Directed by James Cameron. Starring Al Pacino, Natalie Portman, Zendaya, Robert De Niro, Leonardo DiCaprio. The movie explores themes of Technology, Power."
+    ],
+    "response": "The provided context does not contain enough information.",
+    "reference": "Alfonso Cuar\u00f3n directed Movie 0250. Zendaya, Leonardo DiCaprio, Cillian Murphy, Denzel Washington, Viola Davis, and Charlize Theron acted in Movie 0250.",
+    "faithfulness": 0.0
+  },
+  {
+    "user_input": "What genres does Movie 0040 belong to, and which Oscar did it win?",
+    "retrieved_contexts": [
+      "Movie 0040 is a Drama, Crime, Psychological Thriller movie released in 2011. Directed by James Cameron. Starring Timoth\u00e9e Chalamet, Christian Bale, Leonardo DiCaprio, Elliot Page, Matthew McConaughey. The movie explores themes of Fate, Reality, Corruption.",
+      "Movie 0140 is a Fantasy movie released in 2023. Directed by Bong Joon-ho. Starring Natalie Portman, Tom Hardy, Charlize Theron, Denzel Washington, Christian Bale. The movie explores themes of Time, Reality, Isolation, Love.",
+      "Movie 0031 is a Action movie released in 1990. Directed by Martin Scorsese. Starring Emma Stone, Joseph Gordon-Levitt, Matthew McConaughey. The movie explores themes of Survival, Identity, Fate.",
+      "Movie 0079 is a Thriller, Adventure movie released in 1990. Directed by Sofia Coppola. Starring Emma Stone, Timoth\u00e9e Chalamet, Al Pacino, Joseph Gordon-Levitt, Christian Bale, Leonardo DiCaprio. The movie explores themes of Love, Reality.",
+      "Movie 0073 is a Action, Thriller movie released in 2004. Directed by Alfonso Cuar\u00f3n. Starring Joaquin Phoenix, Elliot Page, Natalie Portman, Al Pacino, Viola Davis, Ryan Gosling. The movie explores themes of Identity, Hope, Time, Fate."
+    ],
+    "response": "The provided context does not contain enough information about which Oscar Movie 0040 won. However, Movie 0040 belongs to the genres: Drama, Crime, Psychological Thriller.",
+    "reference": "Movie 0040 belongs to Psychological Thriller, Crime, and Drama. It won Oscar (Best Picture).",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which Christopher Nolan movies include Zendaya as an actor?",
+    "retrieved_contexts": [
+      "Movie 0010 is a Fantasy movie released in 2012. Directed by Christopher Nolan. Starring Zendaya, Elliot Page, Joaquin Phoenix, Al Pacino. The movie explores themes of Identity, Freedom, Dreams, Fate.",
+      "Movie 0043 is a Psychological Thriller movie released in 2011. Directed by Christopher Nolan. Starring Ryan Gosling, Scarlett Johansson, Zendaya, Florence Pugh. The movie explores themes of Corruption, Isolation.",
+      "Movie 0018 is a Thriller, Mystery movie released in 2002. Directed by Paul Thomas Anderson. Starring Cillian Murphy, Joseph Gordon-Levitt, Zendaya, Denzel Washington. The movie explores themes of Power, Dreams, Memory.",
+      "Movie 0035 is a Fantasy, Sci-Fi movie released in 2013. Directed by Ridley Scott. Starring Zendaya, Joseph Gordon-Levitt, Amy Adams, Ryan Gosling. The movie explores themes of Technology, Isolation, Time.",
+      "Movie 0170 is a Adventure movie released in 2009. Directed by Martin Scorsese. Starring Zendaya, Joaquin Phoenix, Christian Bale, Al Pacino, Anne Hathaway. The movie explores themes of Hope, Isolation, Dreams, Time."
+    ],
+    "response": "The Christopher Nolan movies that include Zendaya as an actor are:\n\n- Movie 0010 (Fantasy, 2012)\n- Movie 0043 (Psychological Thriller, 2011)",
+    "reference": "Christopher Nolan movies that include Zendaya are Movie 0010, Movie 0043, Movie 0227, and Movie 0231.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which movies connect James Cameron and Leonardo DiCaprio?",
+    "retrieved_contexts": [
+      "Movie 0149 is a Adventure, Drama movie released in 1996. Directed by James Cameron. Starring Viola Davis, Natalie Portman, Tom Hardy, Leonardo DiCaprio. The movie explores themes of Isolation, Power, Reality, Survival.",
+      "Movie 0008 is a Romance movie released in 1991. Directed by James Cameron. Starring Al Pacino, Natalie Portman, Zendaya, Robert De Niro, Leonardo DiCaprio. The movie explores themes of Technology, Power.",
+      "Movie 0076 is a Fantasy, Horror, Crime movie released in 2006. Directed by James Cameron. Starring Matthew McConaughey, Leonardo DiCaprio, Robert De Niro. The movie explores themes of Survival, Reality, Corruption.",
+      "Movie 0040 is a Drama, Crime, Psychological Thriller movie released in 2011. Directed by James Cameron. Starring Timoth\u00e9e Chalamet, Christian Bale, Leonardo DiCaprio, Elliot Page, Matthew McConaughey. The movie explores themes of Fate, Reality, Corruption.",
+      "Movie 0099 is a Horror, Crime, Fantasy movie released in 1995. Directed by James Cameron. Starring Natalie Portman, Zendaya, Al Pacino. The movie explores themes of Reality, Love."
+    ],
+    "response": "The movies that connect James Cameron and Leonardo DiCaprio in the provided context are:\n\n- Movie 0149 (1996)\n- Movie 0008 (1991)\n- Movie 0076 (2006)\n- Movie 0040 (2011)",
+    "reference": "James Cameron and Leonardo DiCaprio are connected by Movie 0008, Movie 0040, Movie 0076, Movie 0149, Movie 0214, and Movie 0235.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which Denis Villeneuve movies include Zendaya?",
+    "retrieved_contexts": [
+      "Movie 0184 is a Romance, Thriller, Sci-Fi movie released in 1998. Directed by Denis Villeneuve. Starring Al Pacino, Christian Bale, Zendaya, Denzel Washington, Ryan Gosling. The movie explores themes of Dreams, Identity.",
+      "Movie 0041 is a Mystery movie released in 2016. Directed by Denis Villeneuve. Starring Leonardo DiCaprio, Zendaya, Anne Hathaway, Elliot Page. The movie explores themes of Survival, Reality, Isolation.",
+      "Movie 0155 is a Adventure, Action movie released in 2021. Directed by Denis Villeneuve. Starring Charlize Theron, Tom Hardy, Zendaya, Florence Pugh, Elliot Page, Cillian Murphy. The movie explores themes of Freedom, Love.",
+      "Movie 0004 is a Mystery, Romance, Crime movie released in 2020. Directed by Denis Villeneuve. Starring Leonardo DiCaprio, Cillian Murphy, Robert De Niro, Denzel Washington, Zendaya. The movie explores themes of Fate, Survival, Power, Technology.",
+      "Movie 0028 is a Psychological Thriller movie released in 2019. Directed by Denis Villeneuve. Starring Christian Bale, Denzel Washington, Al Pacino, Zendaya, Cillian Murphy, Viola Davis. The movie explores themes of Hope, Love."
+    ],
+    "response": "The Denis Villeneuve movies that include Zendaya are:\n\n- Movie 0184\n- Movie 0041\n- Movie 0155\n- Movie 0004\n- Movie 0028",
+    "reference": "Denis Villeneuve movies that include Zendaya are Movie 0004, Movie 0028, Movie 0041, Movie 0081, Movie 0155, and Movie 0184.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which movies feature Natalie Portman and also won Oscar (Best Picture)?",
+    "retrieved_contexts": [
+      "Movie 0084 is a Fantasy, Thriller movie released in 2002. Directed by Sofia Coppola. Starring Natalie Portman, Florence Pugh, Ryan Gosling, Anne Hathaway, Viola Davis. The movie explores themes of Reality, Dreams.",
+      "Movie 0175 is a Crime, Drama, Action movie released in 2007. Directed by Sofia Coppola. Starring Amy Adams, Natalie Portman, Christian Bale, Leonardo DiCaprio. The movie explores themes of Hope, Dreams, Time.",
+      "Movie 0095 is a Fantasy, Drama movie released in 2009. Directed by Steven Spielberg. Starring Christian Bale, Leonardo DiCaprio, Al Pacino, Natalie Portman. The movie explores themes of Technology, Memory.",
+      "Movie 0178 is a Crime, Action movie released in 2008. Directed by Christopher Nolan. Starring Natalie Portman, Brad Pitt, Christian Bale, Timoth\u00e9e Chalamet. The movie explores themes of Fate, Dreams, Time, Love.",
+      "Movie 0144 is a Mystery, Crime, Adventure movie released in 1992. Directed by Christopher Nolan. Starring Robert De Niro, Denzel Washington, Natalie Portman. The movie explores themes of Hope, Love."
+    ],
+    "response": "The provided context does not contain enough information.",
+    "reference": "Movies featuring Natalie Portman that won Oscar (Best Picture) are Movie 0008, Movie 0024, Movie 0073, Movie 0149, Movie 0171, Movie 0197, Movie 0210, Movie 0217, and Movie 0225.",
+    "faithfulness": 0.0
+  },
+  {
+    "user_input": "Which movies have both Robert De Niro and Tom Hardy in the cast?",
+    "retrieved_contexts": [
+      "Movie 0081 is a Crime, Mystery movie released in 1994. Directed by Denis Villeneuve. Starring Robert De Niro, Ryan Gosling, Elliot Page, Tom Hardy, Brad Pitt, Zendaya. The movie explores themes of Love, Morality, Time, Isolation.",
+      "Movie 0172 is a Adventure movie released in 2010. Directed by Jordan Peele. Starring Leonardo DiCaprio, Robert De Niro, Anne Hathaway, Tom Hardy, Zendaya. The movie explores themes of Dreams, Corruption.",
+      "Movie 0006 is a Fantasy movie released in 2011. Directed by Christopher Nolan. Starring Jake Gyllenhaal, Elliot Page, Robert De Niro, Tom Hardy. The movie explores themes of Survival, Technology.",
+      "Movie 0025 is a Action movie released in 1993. Directed by Peter Jackson. Starring Robert De Niro, Zendaya, Denzel Washington, Tom Hardy, Anne Hathaway, Florence Pugh. The movie explores themes of Identity, Time.",
+      "Movie 0055 is a Mystery movie released in 2010. Directed by David Fincher. Starring Leonardo DiCaprio, Matthew McConaughey, Joseph Gordon-Levitt, Tom Hardy, Robert De Niro, Emma Stone. The movie explores themes of Fate, Technology, Love, Freedom."
+    ],
+    "response": "The movies that have both Robert De Niro and Tom Hardy in the cast are:\n\n- Movie 0081\n- Movie 0172\n- Movie 0006\n- Movie 0025\n- Movie 0055",
+    "reference": "Movies with both Robert De Niro and Tom Hardy are Movie 0006, Movie 0011, Movie 0025, Movie 0049, Movie 0055, Movie 0081, and Movie 0172.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Among Christopher Nolan movies, which ones star Zendaya and explore either Dreams or Technology?",
+    "retrieved_contexts": [
+      "Movie 0010 is a Fantasy movie released in 2012. Directed by Christopher Nolan. Starring Zendaya, Elliot Page, Joaquin Phoenix, Al Pacino. The movie explores themes of Identity, Freedom, Dreams, Fate.",
+      "Movie 0187 is a Fantasy, Romance movie released in 2014. Directed by Christopher Nolan. Starring Scarlett Johansson, Viola Davis, Anne Hathaway, Timoth\u00e9e Chalamet, Cillian Murphy. The movie explores themes of Dreams, Technology.",
+      "Movie 0172 is a Adventure movie released in 2010. Directed by Jordan Peele. Starring Leonardo DiCaprio, Robert De Niro, Anne Hathaway, Tom Hardy, Zendaya. The movie explores themes of Dreams, Corruption.",
+      "Movie 0184 is a Romance, Thriller, Sci-Fi movie released in 1998. Directed by Denis Villeneuve. Starring Al Pacino, Christian Bale, Zendaya, Denzel Washington, Ryan Gosling. The movie explores themes of Dreams, Identity.",
+      "Movie 0018 is a Thriller, Mystery movie released in 2002. Directed by Paul Thomas Anderson. Starring Cillian Murphy, Joseph Gordon-Levitt, Zendaya, Denzel Washington. The movie explores themes of Power, Dreams, Memory."
+    ],
+    "response": "The provided context contains only one Christopher Nolan movie starring Zendaya: **Movie 0010**, which explores the theme of **Dreams**.\n\nNo Christopher Nolan movies in the context star Zendaya and explore **Technology**.\n\n**Answer:** Movie 0010.",
+    "reference": "Movie 0010 and Movie 0227 are Christopher Nolan movies that star Zendaya and explore either Dreams or Technology.",
+    "faithfulness": 0.75
+  },
+  {
+    "user_input": "Which James Cameron movies are in either the Crime or Fantasy genre and also won at least one Oscar?",
+    "retrieved_contexts": [
+      "Movie 0076 is a Fantasy, Horror, Crime movie released in 2006. Directed by James Cameron. Starring Matthew McConaughey, Leonardo DiCaprio, Robert De Niro. The movie explores themes of Survival, Reality, Corruption.",
+      "Movie 0099 is a Horror, Crime, Fantasy movie released in 1995. Directed by James Cameron. Starring Natalie Portman, Zendaya, Al Pacino. The movie explores themes of Reality, Love.",
+      "Movie 0104 is a Crime movie released in 1992. Directed by James Cameron. Starring Ryan Gosling, Timoth\u00e9e Chalamet, Al Pacino, Viola Davis. The movie explores themes of Identity, Hope.",
+      "Movie 0040 is a Drama, Crime, Psychological Thriller movie released in 2011. Directed by James Cameron. Starring Timoth\u00e9e Chalamet, Christian Bale, Leonardo DiCaprio, Elliot Page, Matthew McConaughey. The movie explores themes of Fate, Reality, Corruption.",
+      "Movie 0008 is a Romance movie released in 1991. Directed by James Cameron. Starring Al Pacino, Natalie Portman, Zendaya, Robert De Niro, Leonardo DiCaprio. The movie explores themes of Technology, Power."
+    ],
+    "response": "The provided context does not contain enough information about Oscar wins.",
+    "reference": "Movie 0040, Movie 0099, Movie 0104, Movie 0118, Movie 0168, and Movie 0235 are James Cameron movies in either Crime or Fantasy that won at least one Oscar.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which Denis Villeneuve movies include Zendaya and are either Psychological Thriller or Mystery?",
+    "retrieved_contexts": [
+      "Movie 0028 is a Psychological Thriller movie released in 2019. Directed by Denis Villeneuve. Starring Christian Bale, Denzel Washington, Al Pacino, Zendaya, Cillian Murphy, Viola Davis. The movie explores themes of Hope, Love.",
+      "Movie 0041 is a Mystery movie released in 2016. Directed by Denis Villeneuve. Starring Leonardo DiCaprio, Zendaya, Anne Hathaway, Elliot Page. The movie explores themes of Survival, Reality, Isolation.",
+      "Movie 0184 is a Romance, Thriller, Sci-Fi movie released in 1998. Directed by Denis Villeneuve. Starring Al Pacino, Christian Bale, Zendaya, Denzel Washington, Ryan Gosling. The movie explores themes of Dreams, Identity.",
+      "Movie 0018 is a Thriller, Mystery movie released in 2002. Directed by Paul Thomas Anderson. Starring Cillian Murphy, Joseph Gordon-Levitt, Zendaya, Denzel Washington. The movie explores themes of Power, Dreams, Memory.",
+      "Movie 0004 is a Mystery, Romance, Crime movie released in 2020. Directed by Denis Villeneuve. Starring Leonardo DiCaprio, Cillian Murphy, Robert De Niro, Denzel Washington, Zendaya. The movie explores themes of Fate, Survival, Power, Technology."
+    ],
+    "response": "The Denis Villeneuve movies that include Zendaya and are either Psychological Thriller or Mystery are:\n\n- Movie 0028 (Psychological Thriller)\n- Movie 0041 (Mystery)\n- Movie 0004 (Mystery)",
+    "reference": "Movie 0004, Movie 0028, Movie 0041, and Movie 0081 are Denis Villeneuve movies that include Zendaya and are either Psychological Thriller or Mystery.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which Steven Spielberg movies include Leonardo DiCaprio and won an Oscar?",
+    "retrieved_contexts": [
+      "Movie 0026 is a Sci-Fi movie released in 2003. Directed by Steven Spielberg. Starring Leonardo DiCaprio, Charlize Theron, Zendaya, Robert De Niro, Emma Stone, Viola Davis. The movie explores themes of Freedom, Corruption.",
+      "Movie 0095 is a Fantasy, Drama movie released in 2009. Directed by Steven Spielberg. Starring Christian Bale, Leonardo DiCaprio, Al Pacino, Natalie Portman. The movie explores themes of Technology, Memory.",
+      "Movie 0174 is a Adventure movie released in 2017. Directed by Steven Spielberg. Starring Leonardo DiCaprio, Christian Bale, Al Pacino, Cillian Murphy, Viola Davis, Joaquin Phoenix. The movie explores themes of Memory, Isolation, Reality.",
+      "Movie 0003 is a Crime, Adventure, Horror movie released in 1992. Directed by Steven Spielberg. Starring Anne Hathaway, Leonardo DiCaprio, Ryan Gosling, Zendaya. The movie explores themes of Isolation, Memory.",
+      "Movie 0185 is a Mystery movie released in 1999. Directed by Steven Spielberg. Starring Joseph Gordon-Levitt, Timoth\u00e9e Chalamet, Robert De Niro. The movie explores themes of Survival, Identity."
+    ],
+    "response": "The provided context does not contain enough information.",
+    "reference": "Movie 0003, Movie 0026, Movie 0061, Movie 0174, and Movie 0208 include Leonardo DiCaprio, were directed by Steven Spielberg, and won an Oscar.",
+    "faithfulness": 0.0
+  },
+  {
+    "user_input": "Which Christopher Nolan movies were released after 2010, include either Florence Pugh or Zendaya, and are Action or Adventure?",
+    "retrieved_contexts": [
+      "Movie 0194 is a Fantasy, Adventure movie released in 2010. Directed by Denis Villeneuve. Starring Cillian Murphy, Florence Pugh, Tom Hardy. The movie explores themes of Freedom, Technology, Corruption.",
+      "Movie 0010 is a Fantasy movie released in 2012. Directed by Christopher Nolan. Starring Zendaya, Elliot Page, Joaquin Phoenix, Al Pacino. The movie explores themes of Identity, Freedom, Dreams, Fate.",
+      "Movie 0043 is a Psychological Thriller movie released in 2011. Directed by Christopher Nolan. Starring Ryan Gosling, Scarlett Johansson, Zendaya, Florence Pugh. The movie explores themes of Corruption, Isolation.",
+      "Movie 0126 is a Sci-Fi, Thriller movie released in 2011. Directed by Christopher Nolan. Starring Florence Pugh, Cillian Murphy, Tom Hardy, Brad Pitt. The movie explores themes of Hope, Identity, Technology.",
+      "Movie 0155 is a Adventure, Action movie released in 2021. Directed by Denis Villeneuve. Starring Charlize Theron, Tom Hardy, Zendaya, Florence Pugh, Elliot Page, Cillian Murphy. The movie explores themes of Freedom, Love."
+    ],
+    "response": "The provided context does not contain enough information.",
+    "reference": "Movie 0227 and Movie 0231 were released after 2010, were directed by Christopher Nolan, include either Florence Pugh or Zendaya, and are Action or Adventure.",
+    "faithfulness": 0.0
+  },
+  {
+    "user_input": "Which Ridley Scott movies include Zendaya and belong to Psychological Thriller, Crime, Fantasy, or Adventure?",
+    "retrieved_contexts": [
+      "Movie 0035 is a Fantasy, Sci-Fi movie released in 2013. Directed by Ridley Scott. Starring Zendaya, Joseph Gordon-Levitt, Amy Adams, Ryan Gosling. The movie explores themes of Technology, Isolation, Time.",
+      "Movie 0167 is a Fantasy, Action movie released in 2005. Directed by Ridley Scott. Starring Zendaya, Natalie Portman, Robert De Niro. The movie explores themes of Time, Morality, Memory.",
+      "Movie 0001 is a Psychological Thriller movie released in 1993. Directed by James Cameron. Starring Zendaya, Natalie Portman, Matthew McConaughey. The movie explores themes of Technology, Power, Corruption, Time.",
+      "Movie 0002 is a Romance movie released in 1998. Directed by Ridley Scott. Starring Joaquin Phoenix, Christian Bale, Brad Pitt, Leonardo DiCaprio, Zendaya. The movie explores themes of Dreams, Time, Power.",
+      "Movie 0184 is a Romance, Thriller, Sci-Fi movie released in 1998. Directed by Denis Villeneuve. Starring Al Pacino, Christian Bale, Zendaya, Denzel Washington, Ryan Gosling. The movie explores themes of Dreams, Identity."
+    ],
+    "response": "The provided context does not contain enough information.",
+    "reference": "Movie 0035, Movie 0167, Movie 0243, and Movie 0247 are Ridley Scott movies that include Zendaya and belong to Psychological Thriller, Crime, Fantasy, or Adventure.",
+    "faithfulness": 0.0
+  },
+  {
+    "user_input": "Which movies include Natalie Portman, won Oscar (Best Picture), and are Romance or Fantasy?",
+    "retrieved_contexts": [
+      "Movie 0084 is a Fantasy, Thriller movie released in 2002. Directed by Sofia Coppola. Starring Natalie Portman, Florence Pugh, Ryan Gosling, Anne Hathaway, Viola Davis. The movie explores themes of Reality, Dreams.",
+      "Movie 0008 is a Romance movie released in 1991. Directed by James Cameron. Starring Al Pacino, Natalie Portman, Zendaya, Robert De Niro, Leonardo DiCaprio. The movie explores themes of Technology, Power.",
+      "Movie 0095 is a Fantasy, Drama movie released in 2009. Directed by Steven Spielberg. Starring Christian Bale, Leonardo DiCaprio, Al Pacino, Natalie Portman. The movie explores themes of Technology, Memory.",
+      "Movie 0167 is a Fantasy, Action movie released in 2005. Directed by Ridley Scott. Starring Zendaya, Natalie Portman, Robert De Niro. The movie explores themes of Time, Morality, Memory.",
+      "Movie 0019 is a Romance, Fantasy movie released in 2006. Directed by Greta Gerwig. Starring Joseph Gordon-Levitt, Cillian Murphy, Jake Gyllenhaal, Ryan Gosling, Matthew McConaughey. The movie explores themes of Fate, Love."
+    ],
+    "response": "The provided context does not contain enough information.",
+    "reference": "Movie 0008, Movie 0197, and Movie 0210 include Natalie Portman, won Oscar (Best Picture), and are Romance or Fantasy.",
+    "faithfulness": 0.0
+  },
+  {
+    "user_input": "Which Martin Scorsese movies star Matthew McConaughey and explore either Survival or Identity?",
+    "retrieved_contexts": [
+      "Movie 0031 is a Action movie released in 1990. Directed by Martin Scorsese. Starring Emma Stone, Joseph Gordon-Levitt, Matthew McConaughey. The movie explores themes of Survival, Identity, Fate.",
+      "Movie 0029 is a Romance, Sci-Fi, Crime movie released in 2008. Directed by Martin Scorsese. Starring Charlize Theron, Matthew McConaughey, Anne Hathaway, Joaquin Phoenix, Timoth\u00e9e Chalamet, Tom Hardy. The movie explores themes of Power, Memory, Hope, Identity.",
+      "Movie 0076 is a Fantasy, Horror, Crime movie released in 2006. Directed by James Cameron. Starring Matthew McConaughey, Leonardo DiCaprio, Robert De Niro. The movie explores themes of Survival, Reality, Corruption.",
+      "Movie 0091 is a Romance movie released in 1992. Directed by Martin Scorsese. Starring Robert De Niro, Emma Stone, Timoth\u00e9e Chalamet, Matthew McConaughey, Leonardo DiCaprio, Florence Pugh. The movie explores themes of Time, Survival, Dreams, Reality.",
+      "Movie 0136 is a Sci-Fi, Action movie released in 2014. Directed by James Cameron. Starring Matthew McConaughey, Christian Bale, Amy Adams. The movie explores themes of Survival, Fate."
+    ],
+    "response": "The Martin Scorsese movies starring Matthew McConaughey that explore Survival or Identity are:\n\n- Movie 0031 (explores Survival, Identity)\n- Movie 0029 (explores Identity)\n- Movie 0091 (explores Survival)",
+    "reference": "Movie 0029, Movie 0031, Movie 0091, and Movie 0248 are Martin Scorsese movies starring Matthew McConaughey that explore either Survival or Identity.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which Bong Joon-ho movies are Horror or Sci-Fi and won Oscar (Best Visual Effects) or Oscar (Best Sound Mixing)?",
+    "retrieved_contexts": [
+      "Movie 0193 is a Horror movie released in 2014. Directed by Bong Joon-ho. Starring Timoth\u00e9e Chalamet, Emma Stone, Cillian Murphy, Brad Pitt, Denzel Washington. The movie explores themes of Time, Hope.",
+      "Movie 0159 is a Sci-Fi, Adventure, Drama movie released in 2004. Directed by Bong Joon-ho. Starring Charlize Theron, Emma Stone, Brad Pitt. The movie explores themes of Power, Dreams.",
+      "Movie 0009 is a Horror, Psychological Thriller, Sci-Fi movie released in 2017. Directed by Bong Joon-ho. Starring Viola Davis, Cillian Murphy, Elliot Page. The movie explores themes of Memory, Love, Time.",
+      "Movie 0199 is a Horror, Thriller, Drama movie released in 1994. Directed by Bong Joon-ho. Starring Al Pacino, Charlize Theron, Joaquin Phoenix. The movie explores themes of Identity, Power.",
+      "Movie 0087 is a Mystery, Drama movie released in 2006. Directed by Bong Joon-ho. Starring Tom Hardy, Denzel Washington, Jake Gyllenhaal, Charlize Theron, Brad Pitt, Timoth\u00e9e Chalamet. The movie explores themes of Reality, Hope, Fate, Survival."
+    ],
+    "response": "The provided context does not contain enough information about Oscar wins (Best Visual Effects or Best Sound Mixing) for any of the listed Bong Joon-ho movies.",
+    "reference": "Movie 0107 and Movie 0228 are Bong Joon-ho movies that are Horror or Sci-Fi and won Oscar (Best Visual Effects) or Oscar (Best Sound Mixing).",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which Denis Villeneuve movies are Mystery or Thriller, explore Time or Reality, and won at least one Oscar?",
+    "retrieved_contexts": [
+      "Movie 0041 is a Mystery movie released in 2016. Directed by Denis Villeneuve. Starring Leonardo DiCaprio, Zendaya, Anne Hathaway, Elliot Page. The movie explores themes of Survival, Reality, Isolation.",
+      "Movie 0166 is a Crime, Fantasy, Thriller movie released in 2004. Directed by Denis Villeneuve. Starring Elliot Page, Joaquin Phoenix, Florence Pugh, Leonardo DiCaprio, Jake Gyllenhaal, Viola Davis. The movie explores themes of Freedom, Memory, Technology, Time.",
+      "Movie 0081 is a Crime, Mystery movie released in 1994. Directed by Denis Villeneuve. Starring Robert De Niro, Ryan Gosling, Elliot Page, Tom Hardy, Brad Pitt, Zendaya. The movie explores themes of Love, Morality, Time, Isolation.",
+      "Movie 0033 is a Horror, Psychological Thriller movie released in 2005. Directed by Denis Villeneuve. Starring Emma Stone, Al Pacino, Anne Hathaway, Elliot Page, Leonardo DiCaprio, Ryan Gosling. The movie explores themes of Isolation, Identity, Time.",
+      "Movie 0071 is a Thriller, Romance, Action movie released in 1999. Directed by Denis Villeneuve. Starring Ryan Gosling, Charlize Theron, Al Pacino, Timoth\u00e9e Chalamet. The movie explores themes of Technology, Reality."
+    ],
+    "response": "The provided context does not contain enough information about Oscar wins.",
+    "reference": "Movie 0041, Movie 0166, Movie 0202, and Movie 0242 are Denis Villeneuve movies that are Mystery or Thriller, explore Time or Reality, and won at least one Oscar.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Recommend all Christopher Nolan movies that include Zendaya, and do not include Nolan movies without Zendaya.",
+    "retrieved_contexts": [
+      "Movie 0010 is a Fantasy movie released in 2012. Directed by Christopher Nolan. Starring Zendaya, Elliot Page, Joaquin Phoenix, Al Pacino. The movie explores themes of Identity, Freedom, Dreams, Fate.",
+      "Movie 0043 is a Psychological Thriller movie released in 2011. Directed by Christopher Nolan. Starring Ryan Gosling, Scarlett Johansson, Zendaya, Florence Pugh. The movie explores themes of Corruption, Isolation.",
+      "Movie 0018 is a Thriller, Mystery movie released in 2002. Directed by Paul Thomas Anderson. Starring Cillian Murphy, Joseph Gordon-Levitt, Zendaya, Denzel Washington. The movie explores themes of Power, Dreams, Memory.",
+      "Movie 0004 is a Mystery, Romance, Crime movie released in 2020. Directed by Denis Villeneuve. Starring Leonardo DiCaprio, Cillian Murphy, Robert De Niro, Denzel Washington, Zendaya. The movie explores themes of Fate, Survival, Power, Technology.",
+      "Movie 0184 is a Romance, Thriller, Sci-Fi movie released in 1998. Directed by Denis Villeneuve. Starring Al Pacino, Christian Bale, Zendaya, Denzel Washington, Ryan Gosling. The movie explores themes of Dreams, Identity."
+    ],
+    "response": "Based on the provided context, the Christopher Nolan movies that include Zendaya are:\n\n- Movie 0010 (Fantasy, 2012)\n- Movie 0043 (Psychological Thriller, 2011)",
+    "reference": "Recommend Movie 0010, Movie 0043, Movie 0227, and Movie 0231.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "I liked Movie 0001. Recommend five non-James-Cameron movies that share at least two themes with it.",
+    "retrieved_contexts": [
+      "Movie 0001 is a Psychological Thriller movie released in 1993. Directed by James Cameron. Starring Zendaya, Natalie Portman, Matthew McConaughey. The movie explores themes of Technology, Power, Corruption, Time.",
+      "Movie 0005 is a Fantasy movie released in 2001. Directed by Jordan Peele. Starring Florence Pugh, Al Pacino, Natalie Portman. The movie explores themes of Technology, Survival, Dreams.",
+      "Movie 0008 is a Romance movie released in 1991. Directed by James Cameron. Starring Al Pacino, Natalie Portman, Zendaya, Robert De Niro, Leonardo DiCaprio. The movie explores themes of Technology, Power.",
+      "Movie 0099 is a Horror, Crime, Fantasy movie released in 1995. Directed by James Cameron. Starring Natalie Portman, Zendaya, Al Pacino. The movie explores themes of Reality, Love.",
+      "Movie 0031 is a Action movie released in 1990. Directed by Martin Scorsese. Starring Emma Stone, Joseph Gordon-Levitt, Matthew McConaughey. The movie explores themes of Survival, Identity, Fate."
+    ],
+    "response": "The provided context does not contain enough information to recommend five non-James-Cameron movies that share at least two themes with Movie 0001. The only non-James-Cameron movies in the context are:\n\n- **Movie 0005**: Shares **Technology** (1 theme).\n- **Movie 0031**: Shares no themes with Movie 0001.\n\nNo other non-James-Cameron movies are listed.",
+    "reference": "Good recommendations are Movie 0243, Movie 0215, Movie 0247, Movie 0046, and Movie 0058.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Recommend five movies similar to Movie 0227, but keep only Action or Adventure movies that share Technology or Dreams.",
+    "retrieved_contexts": [
+      "Movie 0187 is a Fantasy, Romance movie released in 2014. Directed by Christopher Nolan. Starring Scarlett Johansson, Viola Davis, Anne Hathaway, Timoth\u00e9e Chalamet, Cillian Murphy. The movie explores themes of Dreams, Technology.",
+      "Movie 0127 is a Mystery movie released in 2007. Directed by Peter Jackson. Starring Robert De Niro, Viola Davis, Elliot Page. The movie explores themes of Morality, Dreams, Power, Reality.",
+      "Movie 0027 is a Action, Mystery movie released in 2008. Directed by Bong Joon-ho. Starring Ryan Gosling, Matthew McConaughey, Al Pacino, Robert De Niro. The movie explores themes of Freedom, Power.",
+      "Movie 0059 is a Action movie released in 2002. Directed by James Cameron. Starring Joaquin Phoenix, Matthew McConaughey, Tom Hardy. The movie explores themes of Corruption, Dreams.",
+      "Movie 0005 is a Fantasy movie released in 2001. Directed by Jordan Peele. Starring Florence Pugh, Al Pacino, Natalie Portman. The movie explores themes of Technology, Survival, Dreams."
+    ],
+    "response": "The provided context does not contain enough information to recommend five Action or Adventure movies that share Technology or Dreams themes with Movie 0227. The only matching candidates are:\n\n- **Movie 0059** (Action, Dreams)\n- **Movie 0027** (Action, but no shared themes)\n\nNo other Action/Adventure movies in the context share Technology or Dreams.",
+    "reference": "Good recommendations are Movie 0021, Movie 0098, Movie 0172, Movie 0201, and Movie 0059.",
+    "faithfulness": 0.5
+  },
+  {
+    "user_input": "Recommend Oscar-winning movies similar to Movie 0006 using shared Fantasy, Technology, or Survival signals.",
+    "retrieved_contexts": [
+      "Movie 0006 is a Fantasy movie released in 2011. Directed by Christopher Nolan. Starring Jake Gyllenhaal, Elliot Page, Robert De Niro, Tom Hardy. The movie explores themes of Survival, Technology.",
+      "Movie 0076 is a Fantasy, Horror, Crime movie released in 2006. Directed by James Cameron. Starring Matthew McConaughey, Leonardo DiCaprio, Robert De Niro. The movie explores themes of Survival, Reality, Corruption.",
+      "Movie 0005 is a Fantasy movie released in 2001. Directed by Jordan Peele. Starring Florence Pugh, Al Pacino, Natalie Portman. The movie explores themes of Technology, Survival, Dreams.",
+      "Movie 0087 is a Mystery, Drama movie released in 2006. Directed by Bong Joon-ho. Starring Tom Hardy, Denzel Washington, Jake Gyllenhaal, Charlize Theron, Brad Pitt, Timoth\u00e9e Chalamet. The movie explores themes of Reality, Hope, Fate, Survival.",
+      "Movie 0039 is a Mystery, Horror movie released in 2006. Directed by Ridley Scott. Starring Natalie Portman, Zendaya, Elliot Page, Amy Adams. The movie explores themes of Fate, Technology."
+    ],
+    "response": "The provided context does not contain enough information about Oscar-winning movies.",
+    "reference": "Good recommendations are Movie 0005, Movie 0166, Movie 0197, Movie 0131, and Movie 0145.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Recommend movies similar to Movie 0243 that include Zendaya and share at least two of Technology, Power, Time, and Freedom.",
+    "retrieved_contexts": [
+      "Movie 0001 is a Psychological Thriller movie released in 1993. Directed by James Cameron. Starring Zendaya, Natalie Portman, Matthew McConaughey. The movie explores themes of Technology, Power, Corruption, Time.",
+      "Movie 0103 is a Action movie released in 1996. Directed by Peter Jackson. Starring Emma Stone, Anne Hathaway, Al Pacino, Zendaya, Ryan Gosling. The movie explores themes of Freedom, Time, Technology, Survival.",
+      "Movie 0037 is a Thriller, Psychological Thriller, Sci-Fi movie released in 2003. Directed by Jordan Peele. Starring Zendaya, Florence Pugh, Ryan Gosling, Robert De Niro, Viola Davis. The movie explores themes of Freedom, Time, Isolation.",
+      "Movie 0026 is a Sci-Fi movie released in 2003. Directed by Steven Spielberg. Starring Leonardo DiCaprio, Charlize Theron, Zendaya, Robert De Niro, Emma Stone, Viola Davis. The movie explores themes of Freedom, Corruption.",
+      "Movie 0035 is a Fantasy, Sci-Fi movie released in 2013. Directed by Ridley Scott. Starring Zendaya, Joseph Gordon-Levitt, Amy Adams, Ryan Gosling. The movie explores themes of Technology, Isolation, Time."
+    ],
+    "response": "The provided context does not contain enough information about Movie 0243 to make a recommendation.",
+    "reference": "Good recommendations are Movie 0037, Movie 0001, Movie 0103, Movie 0124, and Movie 0247.",
+    "faithfulness": 1.0
+  }
+]

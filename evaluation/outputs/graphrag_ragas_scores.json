@@ -1,0 +1,303 @@
+[
+  {
+    "user_input": "Who directed Movie 0227, and what year was it released?",
+    "retrieved_contexts": [
+      "Movie 0227 was released in 2019. Christopher Nolan directed Movie 0227. Zendaya, Joaquin Phoenix, Leonardo DiCaprio, Denzel Washington, Florence Pugh acted in Movie 0227. Movie 0227 belongs to these genres: Adventure, Action. Movie 0227 explores these themes: Technology, Corruption, Dreams, Love. Movie 0227 won these awards: None."
+    ],
+    "response": "Christopher Nolan directed Movie 0227, and it was released in 2019.",
+    "reference": "Christopher Nolan directed Movie 0227, released in 2019.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which awards did Movie 0006 win?",
+    "retrieved_contexts": [
+      "Movie 0006 was released in 2011. Christopher Nolan directed Movie 0006. Robert De Niro, Jake Gyllenhaal, Elliot Page, Tom Hardy acted in Movie 0006. Movie 0006 belongs to these genres: Fantasy. Movie 0006 explores these themes: Technology, Survival. Movie 0006 won these awards: Oscar (Best Picture), Oscar (Best Sound Mixing)."
+    ],
+    "response": "Movie 0006 won the following awards: Oscar (Best Picture), Oscar (Best Sound Mixing).",
+    "reference": "Movie 0006 won Oscar (Best Picture) and Oscar (Best Sound Mixing).",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "What genres and themes are listed for Movie 0243?",
+    "retrieved_contexts": [
+      "Movie 0243 was released in 2022. Ridley Scott directed Movie 0243. Zendaya, Joaquin Phoenix, Anne Hathaway, Al Pacino, Timoth\u00e9e Chalamet acted in Movie 0243. Movie 0243 belongs to these genres: Psychological Thriller, Adventure, Thriller. Movie 0243 explores these themes: Technology, Power, Time, Freedom. Movie 0243 won these awards: Oscar (Best Sound Mixing)."
+    ],
+    "response": "Genres: Psychological Thriller, Adventure, Thriller.\nThemes: Technology, Power, Time, Freedom.",
+    "reference": "Movie 0243 has genres Psychological Thriller, Adventure, Thriller and themes Technology, Power, Time, Freedom.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which director and actors are listed for Movie 0250?",
+    "retrieved_contexts": [
+      "Movie 0250 was released in 2002. Alfonso Cuar\u00f3n directed Movie 0250. Zendaya, Leonardo DiCaprio, Cillian Murphy, Denzel Washington, Viola Davis, Charlize Theron acted in Movie 0250. Movie 0250 belongs to these genres: Drama. Movie 0250 explores these themes: Isolation, Reality. Movie 0250 won these awards: Oscar (Best Actress), Oscar (Best Visual Effects)."
+    ],
+    "response": "Director: Alfonso Cuar\u00f3n\nActors: Zendaya, Leonardo DiCaprio, Cillian Murphy, Denzel Washington, Viola Davis, Charlize Theron",
+    "reference": "Alfonso Cuar\u00f3n directed Movie 0250. Zendaya, Leonardo DiCaprio, Cillian Murphy, Denzel Washington, Viola Davis, and Charlize Theron acted in Movie 0250.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "What genres does Movie 0040 belong to, and which Oscar did it win?",
+    "retrieved_contexts": [
+      "Movie 0040 was released in 2011. James Cameron directed Movie 0040. Matthew McConaughey, Christian Bale, Leonardo DiCaprio, Elliot Page, Timoth\u00e9e Chalamet acted in Movie 0040. Movie 0040 belongs to these genres: Psychological Thriller, Crime, Drama. Movie 0040 explores these themes: Corruption, Fate, Reality. Movie 0040 won these awards: Oscar (Best Picture)."
+    ],
+    "response": "Movie 0040 belongs to the genres: Psychological Thriller, Crime, Drama. It won the Oscar for Best Picture.",
+    "reference": "Movie 0040 belongs to Psychological Thriller, Crime, and Drama. It won Oscar (Best Picture).",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which Christopher Nolan movies include Zendaya as an actor?",
+    "retrieved_contexts": [
+      "Movie 0010 was released in 2012. Christopher Nolan directed Movie 0010. Zendaya, Joaquin Phoenix, Al Pacino, Elliot Page acted in Movie 0010. Movie 0010 belongs to these genres: Fantasy. Movie 0010 explores these themes: Dreams, Fate, Identity, Freedom. Movie 0010 won these awards: None.",
+      "Movie 0043 was released in 2011. Christopher Nolan directed Movie 0043. Zendaya, Ryan Gosling, Florence Pugh, Scarlett Johansson acted in Movie 0043. Movie 0043 belongs to these genres: Psychological Thriller. Movie 0043 explores these themes: Corruption, Isolation. Movie 0043 won these awards: None.",
+      "Movie 0227 was released in 2019. Christopher Nolan directed Movie 0227. Zendaya, Joaquin Phoenix, Leonardo DiCaprio, Denzel Washington, Florence Pugh acted in Movie 0227. Movie 0227 belongs to these genres: Adventure, Action. Movie 0227 explores these themes: Technology, Corruption, Dreams, Love. Movie 0227 won these awards: None.",
+      "Movie 0231 was released in 2019. Christopher Nolan directed Movie 0231. Zendaya, Christian Bale, Leonardo DiCaprio, Florence Pugh, Elliot Page, Joseph Gordon-Levitt acted in Movie 0231. Movie 0231 belongs to these genres: Adventure. Movie 0231 explores these themes: Isolation, Identity. Movie 0231 won these awards: Oscar (Best Picture)."
+    ],
+    "response": "The Christopher Nolan movies that include Zendaya as an actor are:\n\n- Movie 0010\n- Movie 0043\n- Movie 0227\n- Movie 0231",
+    "reference": "Christopher Nolan movies that include Zendaya are Movie 0010, Movie 0043, Movie 0227, and Movie 0231.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which movies connect James Cameron and Leonardo DiCaprio?",
+    "retrieved_contexts": [
+      "Movie 0008 was released in 1991. James Cameron directed Movie 0008. Zendaya, Natalie Portman, Leonardo DiCaprio, Robert De Niro, Al Pacino acted in Movie 0008. Movie 0008 belongs to these genres: Romance. Movie 0008 explores these themes: Technology, Power. Movie 0008 won these awards: Oscar (Best Picture), Oscar (Best Visual Effects).",
+      "Movie 0040 was released in 2011. James Cameron directed Movie 0040. Matthew McConaughey, Christian Bale, Leonardo DiCaprio, Elliot Page, Timoth\u00e9e Chalamet acted in Movie 0040. Movie 0040 belongs to these genres: Psychological Thriller, Crime, Drama. Movie 0040 explores these themes: Corruption, Fate, Reality. Movie 0040 won these awards: Oscar (Best Picture).",
+      "Movie 0076 was released in 2006. James Cameron directed Movie 0076. Matthew McConaughey, Leonardo DiCaprio, Robert De Niro acted in Movie 0076. Movie 0076 belongs to these genres: Crime, Horror, Fantasy. Movie 0076 explores these themes: Corruption, Survival, Reality. Movie 0076 won these awards: None.",
+      "Movie 0149 was released in 1996. James Cameron directed Movie 0149. Natalie Portman, Leonardo DiCaprio, Tom Hardy, Viola Davis acted in Movie 0149. Movie 0149 belongs to these genres: Adventure, Drama. Movie 0149 explores these themes: Power, Isolation, Survival, Reality. Movie 0149 won these awards: Oscar (Best Picture), Oscar (Best Visual Effects).",
+      "Movie 0214 was released in 2000. James Cameron directed Movie 0214. Joaquin Phoenix, Leonardo DiCaprio, Anne Hathaway, Florence Pugh, Jake Gyllenhaal, Emma Stone acted in Movie 0214. Movie 0214 belongs to these genres: Crime, Adventure. Movie 0214 explores these themes: Time, Love, Hope. Movie 0214 won these awards: None.",
+      "Movie 0235 was released in 2021. James Cameron directed Movie 0235. Leonardo DiCaprio, Viola Davis, Scarlett Johansson acted in Movie 0235. Movie 0235 belongs to these genres: Fantasy, Drama. Movie 0235 explores these themes: Corruption, Hope. Movie 0235 won these awards: Oscar (Best Picture)."
+    ],
+    "response": "The movies that connect James Cameron and Leonardo DiCaprio in the provided context are:\n\n- Movie 0008\n- Movie 0040\n- Movie 0076\n- Movie 0149\n- Movie 0214\n- Movie 0235",
+    "reference": "James Cameron and Leonardo DiCaprio are connected by Movie 0008, Movie 0040, Movie 0076, Movie 0149, Movie 0214, and Movie 0235.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which Denis Villeneuve movies include Zendaya?",
+    "retrieved_contexts": [
+      "Movie 0004 was released in 2020. Denis Villeneuve directed Movie 0004. Zendaya, Leonardo DiCaprio, Cillian Murphy, Robert De Niro, Denzel Washington acted in Movie 0004. Movie 0004 belongs to these genres: Romance, Crime, Mystery. Movie 0004 explores these themes: Technology, Power, Fate, Survival. Movie 0004 won these awards: None.",
+      "Movie 0028 was released in 2019. Denis Villeneuve directed Movie 0028. Zendaya, Christian Bale, Cillian Murphy, Denzel Washington, Al Pacino, Viola Davis acted in Movie 0028. Movie 0028 belongs to these genres: Psychological Thriller. Movie 0028 explores these themes: Love, Hope. Movie 0028 won these awards: None.",
+      "Movie 0041 was released in 2016. Denis Villeneuve directed Movie 0041. Zendaya, Leonardo DiCaprio, Anne Hathaway, Elliot Page acted in Movie 0041. Movie 0041 belongs to these genres: Mystery. Movie 0041 explores these themes: Isolation, Survival, Reality. Movie 0041 won these awards: Oscar (Best Visual Effects).",
+      "Movie 0081 was released in 1994. Denis Villeneuve directed Movie 0081. Zendaya, Brad Pitt, Ryan Gosling, Robert De Niro, Elliot Page, Tom Hardy acted in Movie 0081. Movie 0081 belongs to these genres: Crime, Mystery. Movie 0081 explores these themes: Time, Isolation, Love, Morality. Movie 0081 won these awards: None.",
+      "Movie 0155 was released in 2021. Denis Villeneuve directed Movie 0155. Zendaya, Cillian Murphy, Florence Pugh, Elliot Page, Tom Hardy, Charlize Theron acted in Movie 0155. Movie 0155 belongs to these genres: Adventure, Action. Movie 0155 explores these themes: Love, Freedom. Movie 0155 won these awards: Oscar (Best Actress), Oscar (Best Cinematography).",
+      "Movie 0184 was released in 1998. Denis Villeneuve directed Movie 0184. Zendaya, Christian Bale, Ryan Gosling, Denzel Washington, Al Pacino acted in Movie 0184. Movie 0184 belongs to these genres: Romance, Sci-Fi, Thriller. Movie 0184 explores these themes: Dreams, Identity. Movie 0184 won these awards: None."
+    ],
+    "response": "The Denis Villeneuve movies that include Zendaya are:\n\n- Movie 0004\n- Movie 0028\n- Movie 0041\n- Movie 0081\n- Movie 0155\n- Movie 0184",
+    "reference": "Denis Villeneuve movies that include Zendaya are Movie 0004, Movie 0028, Movie 0041, Movie 0081, Movie 0155, and Movie 0184.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which movies feature Natalie Portman and also won Oscar (Best Picture)?",
+    "retrieved_contexts": [
+      "Movie 0008 was released in 1991. James Cameron directed Movie 0008. Zendaya, Natalie Portman, Leonardo DiCaprio, Robert De Niro, Al Pacino acted in Movie 0008. Movie 0008 belongs to these genres: Romance. Movie 0008 explores these themes: Technology, Power. Movie 0008 won these awards: Oscar (Best Picture), Oscar (Best Visual Effects).",
+      "Movie 0024 was released in 1995. Steven Spielberg directed Movie 0024. Natalie Portman, Joaquin Phoenix, Denzel Washington, Viola Davis, Scarlett Johansson, Amy Adams acted in Movie 0024. Movie 0024 belongs to these genres: Horror. Movie 0024 explores these themes: Corruption, Isolation, Survival. Movie 0024 won these awards: Oscar (Best Picture).",
+      "Movie 0073 was released in 2004. Alfonso Cuar\u00f3n directed Movie 0073. Natalie Portman, Joaquin Phoenix, Ryan Gosling, Al Pacino, Elliot Page, Viola Davis acted in Movie 0073. Movie 0073 belongs to these genres: Thriller, Action. Movie 0073 explores these themes: Time, Fate, Identity, Hope. Movie 0073 won these awards: Oscar (Best Actress), Oscar (Best Picture).",
+      "Movie 0149 was released in 1996. James Cameron directed Movie 0149. Natalie Portman, Leonardo DiCaprio, Tom Hardy, Viola Davis acted in Movie 0149. Movie 0149 belongs to these genres: Adventure, Drama. Movie 0149 explores these themes: Power, Isolation, Survival, Reality. Movie 0149 won these awards: Oscar (Best Picture), Oscar (Best Visual Effects).",
+      "Movie 0171 was released in 1994. Christopher Nolan directed Movie 0171. Natalie Portman, Joaquin Phoenix, Leonardo DiCaprio, Robert De Niro, Elliot Page, Amy Adams acted in Movie 0171. Movie 0171 belongs to these genres: Psychological Thriller, Horror, Thriller. Movie 0171 explores these themes: Memory, Reality, Morality. Movie 0171 won these awards: Oscar (Best Picture), Oscar (Best Actor).",
+      "Movie 0197 was released in 2016. Bong Joon-ho directed Movie 0197. Natalie Portman, Joaquin Phoenix, Robert De Niro, Denzel Washington, Elliot Page, Joseph Gordon-Levitt acted in Movie 0197. Movie 0197 belongs to these genres: Crime, Fantasy, Action. Movie 0197 explores these themes: Technology, Fate. Movie 0197 won these awards: Oscar (Best Picture).",
+      "Movie 0210 was released in 2000. Quentin Tarantino directed Movie 0210. Natalie Portman, Leonardo DiCaprio, Al Pacino, Timoth\u00e9e Chalamet acted in Movie 0210. Movie 0210 belongs to these genres: Romance. Movie 0210 explores these themes: Memory, Freedom, Morality. Movie 0210 won these awards: Oscar (Best Picture), Oscar (Best Visual Effects).",
+      "Movie 0217 was released in 1998. Martin Scorsese directed Movie 0217. Natalie Portman, Al Pacino, Tom Hardy acted in Movie 0217. Movie 0217 belongs to these genres: Horror, Thriller. Movie 0217 explores these themes: Survival, Hope. Movie 0217 won these awards: Oscar (Best Picture).",
+      "Movie 0225 was released in 2008. Peter Jackson directed Movie 0225. Natalie Portman, Ryan Gosling, Florence Pugh, Al Pacino, Tom Hardy, Scarlett Johansson acted in Movie 0225. Movie 0225 belongs to these genres: Mystery. Movie 0225 explores these themes: Technology, Freedom. Movie 0225 won these awards: Oscar (Best Picture), Oscar (Best Sound Mixing)."
+    ],
+    "response": "The movies that feature Natalie Portman and won the Oscar for Best Picture are:\n\n- Movie 0008\n- Movie 0024\n- Movie 0073\n- Movie 0149\n- Movie 0171\n- Movie 0197\n- Movie 0210\n- Movie 0217\n- Movie 0225",
+    "reference": "Movies featuring Natalie Portman that won Oscar (Best Picture) are Movie 0008, Movie 0024, Movie 0073, Movie 0149, Movie 0171, Movie 0197, Movie 0210, Movie 0217, and Movie 0225.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which movies have both Robert De Niro and Tom Hardy in the cast?",
+    "retrieved_contexts": [
+      "Movie 0006 was released in 2011. Christopher Nolan directed Movie 0006. Robert De Niro, Jake Gyllenhaal, Elliot Page, Tom Hardy acted in Movie 0006. Movie 0006 belongs to these genres: Fantasy. Movie 0006 explores these themes: Technology, Survival. Movie 0006 won these awards: Oscar (Best Picture), Oscar (Best Sound Mixing).",
+      "Movie 0011 was released in 2023. Quentin Tarantino directed Movie 0011. Anne Hathaway, Ryan Gosling, Cillian Murphy, Robert De Niro, Tom Hardy acted in Movie 0011. Movie 0011 belongs to these genres: Mystery. Movie 0011 explores these themes: Technology, Dreams, Fate. Movie 0011 won these awards: None.",
+      "Movie 0025 was released in 1993. Peter Jackson directed Movie 0025. Zendaya, Anne Hathaway, Robert De Niro, Denzel Washington, Florence Pugh, Tom Hardy acted in Movie 0025. Movie 0025 belongs to these genres: Action. Movie 0025 explores these themes: Time, Identity. Movie 0025 won these awards: None.",
+      "Movie 0049 was released in 2020. Christopher Nolan directed Movie 0049. Ryan Gosling, Robert De Niro, Tom Hardy, Charlize Theron, Timoth\u00e9e Chalamet acted in Movie 0049. Movie 0049 belongs to these genres: Romance, Mystery. Movie 0049 explores these themes: Power, Isolation, Fate, Identity. Movie 0049 won these awards: None.",
+      "Movie 0055 was released in 2010. David Fincher directed Movie 0055. Matthew McConaughey, Leonardo DiCaprio, Robert De Niro, Tom Hardy, Emma Stone, Joseph Gordon-Levitt acted in Movie 0055. Movie 0055 belongs to these genres: Mystery. Movie 0055 explores these themes: Technology, Fate, Love, Freedom. Movie 0055 won these awards: Oscar (Best Sound Mixing), Oscar (Best Actor).",
+      "Movie 0081 was released in 1994. Denis Villeneuve directed Movie 0081. Zendaya, Brad Pitt, Ryan Gosling, Robert De Niro, Elliot Page, Tom Hardy acted in Movie 0081. Movie 0081 belongs to these genres: Crime, Mystery. Movie 0081 explores these themes: Time, Isolation, Love, Morality. Movie 0081 won these awards: None.",
+      "Movie 0172 was released in 2010. Jordan Peele directed Movie 0172. Zendaya, Leonardo DiCaprio, Anne Hathaway, Robert De Niro, Tom Hardy acted in Movie 0172. Movie 0172 belongs to these genres: Adventure. Movie 0172 explores these themes: Corruption, Dreams. Movie 0172 won these awards: Oscar (Best Actor)."
+    ],
+    "response": "The movies that have both Robert De Niro and Tom Hardy in the cast are:\n\n- Movie 0006\n- Movie 0011\n- Movie 0025\n- Movie 0049\n- Movie 0055\n- Movie 0081\n- Movie 0172",
+    "reference": "Movies with both Robert De Niro and Tom Hardy are Movie 0006, Movie 0011, Movie 0025, Movie 0049, Movie 0055, Movie 0081, and Movie 0172.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Among Christopher Nolan movies, which ones star Zendaya and explore either Dreams or Technology?",
+    "retrieved_contexts": [
+      "Movie 0010 was released in 2012. Christopher Nolan directed Movie 0010. Zendaya, Joaquin Phoenix, Al Pacino, Elliot Page acted in Movie 0010. Movie 0010 belongs to these genres: Fantasy. Movie 0010 explores these themes: Dreams, Fate, Identity, Freedom. Movie 0010 won these awards: None.",
+      "Movie 0227 was released in 2019. Christopher Nolan directed Movie 0227. Zendaya, Joaquin Phoenix, Leonardo DiCaprio, Denzel Washington, Florence Pugh acted in Movie 0227. Movie 0227 belongs to these genres: Adventure, Action. Movie 0227 explores these themes: Technology, Corruption, Dreams, Love. Movie 0227 won these awards: None."
+    ],
+    "response": "The provided context contains enough information.\n\nThe Christopher Nolan movies that star Zendaya and explore either Dreams or Technology are:\n- Movie 0010 (explores Dreams)\n- Movie 0227 (explores Dreams and Technology)",
+    "reference": "Movie 0010 and Movie 0227 are Christopher Nolan movies that star Zendaya and explore either Dreams or Technology.",
+    "faithfulness": 0.6666666667
+  },
+  {
+    "user_input": "Which James Cameron movies are in either the Crime or Fantasy genre and also won at least one Oscar?",
+    "retrieved_contexts": [
+      "Movie 0040 was released in 2011. James Cameron directed Movie 0040. Matthew McConaughey, Christian Bale, Leonardo DiCaprio, Elliot Page, Timoth\u00e9e Chalamet acted in Movie 0040. Movie 0040 belongs to these genres: Psychological Thriller, Crime, Drama. Movie 0040 explores these themes: Corruption, Fate, Reality. Movie 0040 won these awards: Oscar (Best Picture).",
+      "Movie 0099 was released in 1995. James Cameron directed Movie 0099. Zendaya, Natalie Portman, Al Pacino acted in Movie 0099. Movie 0099 belongs to these genres: Crime, Horror, Fantasy. Movie 0099 explores these themes: Reality, Love. Movie 0099 won these awards: Oscar (Best Cinematography), Oscar (Best Director).",
+      "Movie 0104 was released in 1992. James Cameron directed Movie 0104. Ryan Gosling, Al Pacino, Viola Davis, Timoth\u00e9e Chalamet acted in Movie 0104. Movie 0104 belongs to these genres: Crime. Movie 0104 explores these themes: Identity, Hope. Movie 0104 won these awards: Oscar (Best Cinematography), Oscar (Best Director).",
+      "Movie 0118 was released in 1995. James Cameron directed Movie 0118. Viola Davis, Scarlett Johansson, Joseph Gordon-Levitt acted in Movie 0118. Movie 0118 belongs to these genres: Romance, Crime, Mystery. Movie 0118 explores these themes: Time, Isolation, Memory, Reality. Movie 0118 won these awards: Oscar (Best Cinematography).",
+      "Movie 0168 was released in 1999. James Cameron directed Movie 0168. Zendaya, Matthew McConaughey, Florence Pugh acted in Movie 0168. Movie 0168 belongs to these genres: Horror, Mystery, Fantasy. Movie 0168 explores these themes: Fate, Identity. Movie 0168 won these awards: Oscar (Best Visual Effects), Oscar (Best Director).",
+      "Movie 0235 was released in 2021. James Cameron directed Movie 0235. Leonardo DiCaprio, Viola Davis, Scarlett Johansson acted in Movie 0235. Movie 0235 belongs to these genres: Fantasy, Drama. Movie 0235 explores these themes: Corruption, Hope. Movie 0235 won these awards: Oscar (Best Picture)."
+    ],
+    "response": "The James Cameron movies in either the Crime or Fantasy genre that won at least one Oscar are:\n\n- Movie 0040 (Crime, won Oscar for Best Picture)\n- Movie 0099 (Crime, Fantasy, won Oscars for Best Cinematography and Best Director)\n- Movie 0104 (Crime, won Oscars for Best Cinematography and Best Director)\n- Movie 0118 (Crime, won Oscar for Best Cinematography)\n- Movie 0168 (Fantasy, won Oscars for Best Visual Effects and Best Director)\n- Movie 0235 (Fantasy, won Oscar for Best Picture)",
+    "reference": "Movie 0040, Movie 0099, Movie 0104, Movie 0118, Movie 0168, and Movie 0235 are James Cameron movies in either Crime or Fantasy that won at least one Oscar.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which Denis Villeneuve movies include Zendaya and are either Psychological Thriller or Mystery?",
+    "retrieved_contexts": [
+      "Movie 0004 was released in 2020. Denis Villeneuve directed Movie 0004. Zendaya, Leonardo DiCaprio, Cillian Murphy, Robert De Niro, Denzel Washington acted in Movie 0004. Movie 0004 belongs to these genres: Romance, Crime, Mystery. Movie 0004 explores these themes: Technology, Power, Fate, Survival. Movie 0004 won these awards: None.",
+      "Movie 0028 was released in 2019. Denis Villeneuve directed Movie 0028. Zendaya, Christian Bale, Cillian Murphy, Denzel Washington, Al Pacino, Viola Davis acted in Movie 0028. Movie 0028 belongs to these genres: Psychological Thriller. Movie 0028 explores these themes: Love, Hope. Movie 0028 won these awards: None.",
+      "Movie 0041 was released in 2016. Denis Villeneuve directed Movie 0041. Zendaya, Leonardo DiCaprio, Anne Hathaway, Elliot Page acted in Movie 0041. Movie 0041 belongs to these genres: Mystery. Movie 0041 explores these themes: Isolation, Survival, Reality. Movie 0041 won these awards: Oscar (Best Visual Effects).",
+      "Movie 0081 was released in 1994. Denis Villeneuve directed Movie 0081. Zendaya, Brad Pitt, Ryan Gosling, Robert De Niro, Elliot Page, Tom Hardy acted in Movie 0081. Movie 0081 belongs to these genres: Crime, Mystery. Movie 0081 explores these themes: Time, Isolation, Love, Morality. Movie 0081 won these awards: None."
+    ],
+    "response": "The Denis Villeneuve movies that include Zendaya and are either Psychological Thriller or Mystery are:\n\n- Movie 0028 (Psychological Thriller)\n- Movie 0041 (Mystery)",
+    "reference": "Movie 0004, Movie 0028, Movie 0041, and Movie 0081 are Denis Villeneuve movies that include Zendaya and are either Psychological Thriller or Mystery.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which Steven Spielberg movies include Leonardo DiCaprio and won an Oscar?",
+    "retrieved_contexts": [
+      "Movie 0003 was released in 1992. Steven Spielberg directed Movie 0003. Zendaya, Leonardo DiCaprio, Anne Hathaway, Ryan Gosling acted in Movie 0003. Movie 0003 belongs to these genres: Crime, Adventure, Horror. Movie 0003 explores these themes: Isolation, Memory. Movie 0003 won these awards: Oscar (Best Cinematography).",
+      "Movie 0026 was released in 2003. Steven Spielberg directed Movie 0026. Zendaya, Leonardo DiCaprio, Robert De Niro, Viola Davis, Charlize Theron, Emma Stone acted in Movie 0026. Movie 0026 belongs to these genres: Sci-Fi. Movie 0026 explores these themes: Corruption, Freedom. Movie 0026 won these awards: Oscar (Best Sound Mixing).",
+      "Movie 0061 was released in 2012. Steven Spielberg directed Movie 0061. Matthew McConaughey, Brad Pitt, Leonardo DiCaprio, Timoth\u00e9e Chalamet, Amy Adams acted in Movie 0061. Movie 0061 belongs to these genres: Mystery, Fantasy. Movie 0061 explores these themes: Corruption, Identity. Movie 0061 won these awards: Oscar (Best Actor).",
+      "Movie 0174 was released in 2017. Steven Spielberg directed Movie 0174. Joaquin Phoenix, Christian Bale, Leonardo DiCaprio, Cillian Murphy, Al Pacino, Viola Davis acted in Movie 0174. Movie 0174 belongs to these genres: Adventure. Movie 0174 explores these themes: Isolation, Memory, Reality. Movie 0174 won these awards: Oscar (Best Visual Effects), Oscar (Best Actor).",
+      "Movie 0208 was released in 2020. Steven Spielberg directed Movie 0208. Matthew McConaughey, Leonardo DiCaprio, Cillian Murphy, Charlize Theron acted in Movie 0208. Movie 0208 belongs to these genres: Action. Movie 0208 explores these themes: Memory, Survival. Movie 0208 won these awards: Oscar (Best Visual Effects), Oscar (Best Actor)."
+    ],
+    "response": "The provided context does not contain enough information.",
+    "reference": "Movie 0003, Movie 0026, Movie 0061, Movie 0174, and Movie 0208 include Leonardo DiCaprio, were directed by Steven Spielberg, and won an Oscar.",
+    "faithfulness": 0.0
+  },
+  {
+    "user_input": "Which Christopher Nolan movies were released after 2010, include either Florence Pugh or Zendaya, and are Action or Adventure?",
+    "retrieved_contexts": [
+      "Movie 0227 was released in 2019. Christopher Nolan directed Movie 0227. Zendaya, Joaquin Phoenix, Leonardo DiCaprio, Denzel Washington, Florence Pugh acted in Movie 0227. Movie 0227 belongs to these genres: Adventure, Action. Movie 0227 explores these themes: Technology, Corruption, Dreams, Love. Movie 0227 won these awards: None.",
+      "Movie 0231 was released in 2019. Christopher Nolan directed Movie 0231. Zendaya, Christian Bale, Leonardo DiCaprio, Florence Pugh, Elliot Page, Joseph Gordon-Levitt acted in Movie 0231. Movie 0231 belongs to these genres: Adventure. Movie 0231 explores these themes: Isolation, Identity. Movie 0231 won these awards: Oscar (Best Picture)."
+    ],
+    "response": "Movie 0227 and Movie 0231.",
+    "reference": "Movie 0227 and Movie 0231 were released after 2010, were directed by Christopher Nolan, include either Florence Pugh or Zendaya, and are Action or Adventure.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which Ridley Scott movies include Zendaya and belong to Psychological Thriller, Crime, Fantasy, or Adventure?",
+    "retrieved_contexts": [
+      "Movie 0035 was released in 2013. Ridley Scott directed Movie 0035. Zendaya, Ryan Gosling, Amy Adams, Joseph Gordon-Levitt acted in Movie 0035. Movie 0035 belongs to these genres: Fantasy, Sci-Fi. Movie 0035 explores these themes: Technology, Time, Isolation. Movie 0035 won these awards: Oscar (Best Picture), Oscar (Best Actor).",
+      "Movie 0167 was released in 2005. Ridley Scott directed Movie 0167. Zendaya, Natalie Portman, Robert De Niro acted in Movie 0167. Movie 0167 belongs to these genres: Fantasy, Action. Movie 0167 explores these themes: Time, Memory, Morality. Movie 0167 won these awards: Oscar (Best Sound Mixing), Oscar (Best Director).",
+      "Movie 0243 was released in 2022. Ridley Scott directed Movie 0243. Zendaya, Joaquin Phoenix, Anne Hathaway, Al Pacino, Timoth\u00e9e Chalamet acted in Movie 0243. Movie 0243 belongs to these genres: Psychological Thriller, Adventure, Thriller. Movie 0243 explores these themes: Technology, Power, Time, Freedom. Movie 0243 won these awards: Oscar (Best Sound Mixing).",
+      "Movie 0247 was released in 2021. Ridley Scott directed Movie 0247. Zendaya, Leonardo DiCaprio, Ryan Gosling, Denzel Washington, Florence Pugh, Jake Gyllenhaal acted in Movie 0247. Movie 0247 belongs to these genres: Psychological Thriller, Crime, Fantasy. Movie 0247 explores these themes: Technology, Power. Movie 0247 won these awards: Oscar (Best Sound Mixing)."
+    ],
+    "response": "The Ridley Scott movies that include Zendaya and belong to Psychological Thriller, Crime, Fantasy, or Adventure are:\n\n- Movie 0243 (Psychological Thriller, Adventure)\n- Movie 0247 (Psychological Thriller, Crime, Fantasy)",
+    "reference": "Movie 0035, Movie 0167, Movie 0243, and Movie 0247 are Ridley Scott movies that include Zendaya and belong to Psychological Thriller, Crime, Fantasy, or Adventure.",
+    "faithfulness": 0.6666666667
+  },
+  {
+    "user_input": "Which movies include Natalie Portman, won Oscar (Best Picture), and are Romance or Fantasy?",
+    "retrieved_contexts": [
+      "Movie 0008 was released in 1991. James Cameron directed Movie 0008. Zendaya, Natalie Portman, Leonardo DiCaprio, Robert De Niro, Al Pacino acted in Movie 0008. Movie 0008 belongs to these genres: Romance. Movie 0008 explores these themes: Technology, Power. Movie 0008 won these awards: Oscar (Best Picture), Oscar (Best Visual Effects).",
+      "Movie 0197 was released in 2016. Bong Joon-ho directed Movie 0197. Natalie Portman, Joaquin Phoenix, Robert De Niro, Denzel Washington, Elliot Page, Joseph Gordon-Levitt acted in Movie 0197. Movie 0197 belongs to these genres: Crime, Fantasy, Action. Movie 0197 explores these themes: Technology, Fate. Movie 0197 won these awards: Oscar (Best Picture).",
+      "Movie 0210 was released in 2000. Quentin Tarantino directed Movie 0210. Natalie Portman, Leonardo DiCaprio, Al Pacino, Timoth\u00e9e Chalamet acted in Movie 0210. Movie 0210 belongs to these genres: Romance. Movie 0210 explores these themes: Memory, Freedom, Morality. Movie 0210 won these awards: Oscar (Best Picture), Oscar (Best Visual Effects)."
+    ],
+    "response": "The provided context does not contain enough information.",
+    "reference": "Movie 0008, Movie 0197, and Movie 0210 include Natalie Portman, won Oscar (Best Picture), and are Romance or Fantasy.",
+    "faithfulness": 0.0
+  },
+  {
+    "user_input": "Which Martin Scorsese movies star Matthew McConaughey and explore either Survival or Identity?",
+    "retrieved_contexts": [
+      "Movie 0029 was released in 2008. Martin Scorsese directed Movie 0029. Matthew McConaughey, Joaquin Phoenix, Anne Hathaway, Tom Hardy, Charlize Theron, Timoth\u00e9e Chalamet acted in Movie 0029. Movie 0029 belongs to these genres: Romance, Crime, Sci-Fi. Movie 0029 explores these themes: Power, Memory, Identity, Hope. Movie 0029 won these awards: Oscar (Best Picture).",
+      "Movie 0031 was released in 1990. Martin Scorsese directed Movie 0031. Matthew McConaughey, Emma Stone, Joseph Gordon-Levitt acted in Movie 0031. Movie 0031 belongs to these genres: Action. Movie 0031 explores these themes: Fate, Survival, Identity. Movie 0031 won these awards: Oscar (Best Picture).",
+      "Movie 0091 was released in 1992. Martin Scorsese directed Movie 0091. Matthew McConaughey, Leonardo DiCaprio, Robert De Niro, Florence Pugh, Timoth\u00e9e Chalamet, Emma Stone acted in Movie 0091. Movie 0091 belongs to these genres: Romance. Movie 0091 explores these themes: Time, Dreams, Survival, Reality. Movie 0091 won these awards: Oscar (Best Picture), Oscar (Best Director).",
+      "Movie 0248 was released in 2018. Martin Scorsese directed Movie 0248. Matthew McConaughey, Ryan Gosling, Denzel Washington, Viola Davis acted in Movie 0248. Movie 0248 belongs to these genres: Romance, Fantasy. Movie 0248 explores these themes: Corruption, Survival, Freedom. Movie 0248 won these awards: None."
+    ],
+    "response": "The Martin Scorsese movies starring Matthew McConaughey that explore either Survival or Identity are:\n\n- **Movie 0031** (explores Survival and Identity)\n- **Movie 0091** (explores Survival)\n- **Movie 0248** (explores Survival)",
+    "reference": "Movie 0029, Movie 0031, Movie 0091, and Movie 0248 are Martin Scorsese movies starring Matthew McConaughey that explore either Survival or Identity.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Which Bong Joon-ho movies are Horror or Sci-Fi and won Oscar (Best Visual Effects) or Oscar (Best Sound Mixing)?",
+    "retrieved_contexts": [
+      "Movie 0107 was released in 2005. Bong Joon-ho directed Movie 0107. Christian Bale, Leonardo DiCaprio, Anne Hathaway, Ryan Gosling, Tom Hardy, Joseph Gordon-Levitt acted in Movie 0107. Movie 0107 belongs to these genres: Romance, Horror. Movie 0107 explores these themes: Isolation, Identity. Movie 0107 won these awards: Oscar (Best Visual Effects).",
+      "Movie 0228 was released in 2019. Bong Joon-ho directed Movie 0228. Al Pacino, Elliot Page, Emma Stone, Scarlett Johansson, Amy Adams, Joseph Gordon-Levitt acted in Movie 0228. Movie 0228 belongs to these genres: Horror, Sci-Fi. Movie 0228 explores these themes: Power, Love, Hope. Movie 0228 won these awards: Oscar (Best Visual Effects), Oscar (Best Sound Mixing)."
+    ],
+    "response": "The provided context does not contain enough information.",
+    "reference": "Movie 0107 and Movie 0228 are Bong Joon-ho movies that are Horror or Sci-Fi and won Oscar (Best Visual Effects) or Oscar (Best Sound Mixing).",
+    "faithfulness": 0.0
+  },
+  {
+    "user_input": "Which Denis Villeneuve movies are Mystery or Thriller, explore Time or Reality, and won at least one Oscar?",
+    "retrieved_contexts": [
+      "Movie 0041 was released in 2016. Denis Villeneuve directed Movie 0041. Zendaya, Leonardo DiCaprio, Anne Hathaway, Elliot Page acted in Movie 0041. Movie 0041 belongs to these genres: Mystery. Movie 0041 explores these themes: Isolation, Survival, Reality. Movie 0041 won these awards: Oscar (Best Visual Effects).",
+      "Movie 0166 was released in 2004. Denis Villeneuve directed Movie 0166. Joaquin Phoenix, Leonardo DiCaprio, Florence Pugh, Jake Gyllenhaal, Elliot Page, Viola Davis acted in Movie 0166. Movie 0166 belongs to these genres: Crime, Fantasy, Thriller. Movie 0166 explores these themes: Technology, Time, Memory, Freedom. Movie 0166 won these awards: Oscar (Best Visual Effects), Oscar (Best Actor).",
+      "Movie 0202 was released in 2003. Denis Villeneuve directed Movie 0202. Brad Pitt, Leonardo DiCaprio, Ryan Gosling, Al Pacino, Viola Davis acted in Movie 0202. Movie 0202 belongs to these genres: Mystery, Fantasy, Action. Movie 0202 explores these themes: Time, Memory, Survival, Identity. Movie 0202 won these awards: Oscar (Best Cinematography).",
+      "Movie 0242 was released in 2018. Denis Villeneuve directed Movie 0242. Natalie Portman, Matthew McConaughey, Ryan Gosling, Al Pacino, Scarlett Johansson, Amy Adams acted in Movie 0242. Movie 0242 belongs to these genres: Mystery, Thriller. Movie 0242 explores these themes: Time, Reality, Love, Morality. Movie 0242 won these awards: Oscar (Best Visual Effects)."
+    ],
+    "response": "The Denis Villeneuve movies that are Mystery or Thriller, explore Time or Reality, and won at least one Oscar are:\n\n- Movie 0041 (Mystery, explores Reality, won Oscar for Best Visual Effects)\n- Movie 0166 (Thriller, explores Time, won Oscars for Best Visual Effects and Best Actor)\n- Movie 0202 (Mystery, explores Time, won Oscar for Best Cinematography)\n- Movie 0242 (Mystery, Thriller, explores Time and Reality, won Oscar for Best Visual Effects)",
+    "reference": "Movie 0041, Movie 0166, Movie 0202, and Movie 0242 are Denis Villeneuve movies that are Mystery or Thriller, explore Time or Reality, and won at least one Oscar.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "Recommend all Christopher Nolan movies that include Zendaya, and do not include Nolan movies without Zendaya.",
+    "retrieved_contexts": [
+      "Movie 0010 was released in 2012. Christopher Nolan directed Movie 0010. Zendaya, Joaquin Phoenix, Al Pacino, Elliot Page acted in Movie 0010. Movie 0010 belongs to these genres: Fantasy. Movie 0010 explores these themes: Dreams, Fate, Identity, Freedom. Movie 0010 won these awards: None.",
+      "Movie 0043 was released in 2011. Christopher Nolan directed Movie 0043. Zendaya, Ryan Gosling, Florence Pugh, Scarlett Johansson acted in Movie 0043. Movie 0043 belongs to these genres: Psychological Thriller. Movie 0043 explores these themes: Corruption, Isolation. Movie 0043 won these awards: None.",
+      "Movie 0227 was released in 2019. Christopher Nolan directed Movie 0227. Zendaya, Joaquin Phoenix, Leonardo DiCaprio, Denzel Washington, Florence Pugh acted in Movie 0227. Movie 0227 belongs to these genres: Adventure, Action. Movie 0227 explores these themes: Technology, Corruption, Dreams, Love. Movie 0227 won these awards: None.",
+      "Movie 0231 was released in 2019. Christopher Nolan directed Movie 0231. Zendaya, Christian Bale, Leonardo DiCaprio, Florence Pugh, Elliot Page, Joseph Gordon-Levitt acted in Movie 0231. Movie 0231 belongs to these genres: Adventure. Movie 0231 explores these themes: Isolation, Identity. Movie 0231 won these awards: Oscar (Best Picture)."
+    ],
+    "response": "Based on the provided context, the Christopher Nolan movies that include Zendaya are:\n\n- Movie 0010\n- Movie 0043\n- Movie 0227\n- Movie 0231\n\nAll of these movies are directed by Christopher Nolan and include Zendaya in the cast.",
+    "reference": "Recommend Movie 0010, Movie 0043, Movie 0227, and Movie 0231.",
+    "faithfulness": 1.0
+  },
+  {
+    "user_input": "I liked Movie 0001. Recommend five non-James-Cameron movies that share at least two themes with it.",
+    "retrieved_contexts": [
+      "Movie 0001 was released in 1993. James Cameron directed Movie 0001. Zendaya, Natalie Portman, Matthew McConaughey acted in Movie 0001. Movie 0001 belongs to these genres: Psychological Thriller. Movie 0001 explores these themes: Technology, Power, Corruption, Time. Movie 0001 won these awards: None.",
+      "Movie 0243 was released in 2022. Ridley Scott directed Movie 0243. Zendaya, Joaquin Phoenix, Anne Hathaway, Al Pacino, Timoth\u00e9e Chalamet acted in Movie 0243. Movie 0243 belongs to these genres: Psychological Thriller, Adventure, Thriller. Movie 0243 explores these themes: Technology, Power, Time, Freedom. Movie 0243 won these awards: Oscar (Best Sound Mixing).",
+      "Movie 0215 was released in 2004. Greta Gerwig directed Movie 0215. Natalie Portman, Brad Pitt, Scarlett Johansson acted in Movie 0215. Movie 0215 belongs to these genres: Psychological Thriller, Adventure, Fantasy. Movie 0215 explores these themes: Technology, Time. Movie 0215 won these awards: Oscar (Best Sound Mixing).",
+      "Movie 0247 was released in 2021. Ridley Scott directed Movie 0247. Zendaya, Leonardo DiCaprio, Ryan Gosling, Denzel Washington, Florence Pugh, Jake Gyllenhaal acted in Movie 0247. Movie 0247 belongs to these genres: Psychological Thriller, Crime, Fantasy. Movie 0247 explores these themes: Technology, Power. Movie 0247 won these awards: Oscar (Best Sound Mixing).",
+      "Movie 0046 was released in 1993. Paul Thomas Anderson directed Movie 0046. Brad Pitt, Cillian Murphy, Florence Pugh, Charlize Theron, Emma Stone, Amy Adams acted in Movie 0046. Movie 0046 belongs to these genres: Psychological Thriller, Romance, Horror. Movie 0046 explores these themes: Corruption, Time, Dreams, Fate. Movie 0046 won these awards: None.",
+      "Movie 0058 was released in 2016. Quentin Tarantino directed Movie 0058. Christian Bale, Brad Pitt, Elliot Page, Tom Hardy, Emma Stone, Scarlett Johansson acted in Movie 0058. Movie 0058 belongs to these genres: Psychological Thriller, Crime, Drama. Movie 0058 explores these themes: Technology, Power, Dreams. Movie 0058 won these awards: Oscar (Best Picture)."
+    ],
+    "response": "The provided context does not contain enough information to recommend five non-James-Cameron movies that share at least two themes with Movie 0001. Only four non-James-Cameron movies (0243, 0215, 0247, 0046, 0058) are listed, and not all share at least two themes with Movie 0001.\n\nHere are the valid recommendations from the context:\n- **Movie 0243**: Shares *Technology, Power, Time*.\n- **Movie 0215**: Shares *Technology, Time*.\n- **Movie 0247**: Shares *Technology, Power*.\n- **Movie 0046**: Shares *Corruption, Time*.\n- **Movie 0058**: Shares *Technology, Power*.\n\nSince the context only provides five candidates, these are the possible recommendations.",
+    "reference": "Good recommendations are Movie 0243, Movie 0215, Movie 0247, Movie 0046, and Movie 0058.",
+    "faithfulness": 0.6666666667
+  },
+  {
+    "user_input": "Recommend five movies similar to Movie 0227, but keep only Action or Adventure movies that share Technology or Dreams.",
+    "retrieved_contexts": [
+      "Movie 0227 was released in 2019. Christopher Nolan directed Movie 0227. Zendaya, Joaquin Phoenix, Leonardo DiCaprio, Denzel Washington, Florence Pugh acted in Movie 0227. Movie 0227 belongs to these genres: Adventure, Action. Movie 0227 explores these themes: Technology, Corruption, Dreams, Love. Movie 0227 won these awards: None.",
+      "Movie 0021 was released in 2021. Jordan Peele directed Movie 0021. Anne Hathaway, Florence Pugh, Viola Davis, Joseph Gordon-Levitt acted in Movie 0021. Movie 0021 belongs to these genres: Fantasy, Action. Movie 0021 explores these themes: Technology, Corruption, Time, Love. Movie 0021 won these awards: Oscar (Best Visual Effects), Oscar (Best Actor).",
+      "Movie 0098 was released in 1990. Bong Joon-ho directed Movie 0098. Joaquin Phoenix, Anne Hathaway, Tom Hardy, Charlize Theron acted in Movie 0098. Movie 0098 belongs to these genres: Romance, Adventure, Thriller. Movie 0098 explores these themes: Corruption, Dreams, Love. Movie 0098 won these awards: None.",
+      "Movie 0172 was released in 2010. Jordan Peele directed Movie 0172. Zendaya, Leonardo DiCaprio, Anne Hathaway, Robert De Niro, Tom Hardy acted in Movie 0172. Movie 0172 belongs to these genres: Adventure. Movie 0172 explores these themes: Corruption, Dreams. Movie 0172 won these awards: Oscar (Best Actor).",
+      "Movie 0201 was released in 2022. Martin Scorsese directed Movie 0201. Matthew McConaughey, Leonardo DiCaprio, Cillian Murphy, Amy Adams acted in Movie 0201. Movie 0201 belongs to these genres: Adventure, Action, Drama. Movie 0201 explores these themes: Dreams, Reality. Movie 0201 won these awards: Oscar (Best Visual Effects), Oscar (Best Actor).",
+      "Movie 0059 was released in 2002. James Cameron directed Movie 0059. Matthew McConaughey, Joaquin Phoenix, Tom Hardy acted in Movie 0059. Movie 0059 belongs to these genres: Action. Movie 0059 explores these themes: Corruption, Dreams. Movie 0059 won these awards: Oscar (Best Visual Effects)."
+    ],
+    "response": "Based on the context, here are five movies similar to Movie 0227 that are Action or Adventure and share the themes of Technology or Dreams:\n\n1. **Movie 0021** - Action, Technology\n2. **Movie 0172** - Adventure, Dreams\n3. **Movie 0201** - Adventure, Action, Dreams\n4. **Movie 0059** - Action, Dreams\n\nThe provided context does not contain enough information for a fifth recommendation.",
+    "reference": "Good recommendations are Movie 0021, Movie 0098, Movie 0172, Movie 0201, and Movie 0059.",
+    "faithfulness": 0.6666666667
+  },
+  {
+    "user_input": "Recommend Oscar-winning movies similar to Movie 0006 using shared Fantasy, Technology, or Survival signals.",
+    "retrieved_contexts": [
+      "Movie 0006 was released in 2011. Christopher Nolan directed Movie 0006. Robert De Niro, Jake Gyllenhaal, Elliot Page, Tom Hardy acted in Movie 0006. Movie 0006 belongs to these genres: Fantasy. Movie 0006 explores these themes: Technology, Survival. Movie 0006 won these awards: Oscar (Best Picture), Oscar (Best Sound Mixing).",
+      "Movie 0005 was released in 2001. Jordan Peele directed Movie 0005. Natalie Portman, Florence Pugh, Al Pacino acted in Movie 0005. Movie 0005 belongs to these genres: Fantasy. Movie 0005 explores these themes: Technology, Dreams, Survival. Movie 0005 won these awards: Oscar (Best Actress), Oscar (Best Visual Effects).",
+      "Movie 0166 was released in 2004. Denis Villeneuve directed Movie 0166. Joaquin Phoenix, Leonardo DiCaprio, Florence Pugh, Jake Gyllenhaal, Elliot Page, Viola Davis acted in Movie 0166. Movie 0166 belongs to these genres: Crime, Fantasy, Thriller. Movie 0166 explores these themes: Technology, Time, Memory, Freedom. Movie 0166 won these awards: Oscar (Best Visual Effects), Oscar (Best Actor).",
+      "Movie 0197 was released in 2016. Bong Joon-ho directed Movie 0197. Natalie Portman, Joaquin Phoenix, Robert De Niro, Denzel Washington, Elliot Page, Joseph Gordon-Levitt acted in Movie 0197. Movie 0197 belongs to these genres: Crime, Fantasy, Action. Movie 0197 explores these themes: Technology, Fate. Movie 0197 won these awards: Oscar (Best Picture).",
+      "Movie 0131 was released in 1995. David Fincher directed Movie 0131. Florence Pugh, Tom Hardy, Viola Davis, Charlize Theron, Emma Stone acted in Movie 0131. Movie 0131 belongs to these genres: Mystery, Fantasy, Drama. Movie 0131 explores these themes: Survival, Reality. Movie 0131 won these awards: Oscar (Best Sound Mixing).",
+      "Movie 0145 was released in 2010. Sofia Coppola directed Movie 0145. Christian Bale, Leonardo DiCaprio, Tom Hardy, Charlize Theron, Timoth\u00e9e Chalamet, Emma Stone acted in Movie 0145. Movie 0145 belongs to these genres: Mystery, Fantasy. Movie 0145 explores these themes: Time, Survival. Movie 0145 won these awards: Oscar (Best Picture), Oscar (Best Director)."
+    ],
+    "response": "Based on the context, the Oscar-winning movies that share **Fantasy**, **Technology**, or **Survival** signals with **Movie 0006** are:\n\n- **Movie 0005**: Shares **Fantasy**, **Technology**, and **Survival** themes. Won Oscars (Best Actress, Best Visual Effects).\n- **Movie 0166**: Shares **Fantasy** and **Technology** themes. Won Oscars (Best Visual Effects, Best Actor).\n- **Movie 0197**: Shares **Fantasy** and **Technology** themes. Won Oscar (Best Picture).\n- **Movie 0131**: Shares **Fantasy** and **Survival** themes. Won Oscar (Best Sound Mixing).\n- **Movie 0145**: Shares **Fantasy** and **Survival** themes. Won Oscars (Best Picture, Best Director).\n\n**Recommendation**: All of the above candidates satisfy the constraints. For example, **Movie 0005** and **Movie 0131** share the most direct overlaps (Fantasy + Survival/Technology).",
+    "reference": "Good recommendations are Movie 0005, Movie 0166, Movie 0197, Movie 0131, and Movie 0145.",
+    "faithfulness": 0.7692307692
+  },
+  {
+    "user_input": "Recommend movies similar to Movie 0243 that include Zendaya and share at least two of Technology, Power, Time, and Freedom.",
+    "retrieved_contexts": [
+      "Movie 0243 was released in 2022. Ridley Scott directed Movie 0243. Zendaya, Joaquin Phoenix, Anne Hathaway, Al Pacino, Timoth\u00e9e Chalamet acted in Movie 0243. Movie 0243 belongs to these genres: Psychological Thriller, Adventure, Thriller. Movie 0243 explores these themes: Technology, Power, Time, Freedom. Movie 0243 won these awards: Oscar (Best Sound Mixing).",
+      "Movie 0037 was released in 2003. Jordan Peele directed Movie 0037. Zendaya, Ryan Gosling, Robert De Niro, Florence Pugh, Viola Davis acted in Movie 0037. Movie 0037 belongs to these genres: Psychological Thriller, Sci-Fi, Thriller. Movie 0037 explores these themes: Time, Isolation, Freedom. Movie 0037 won these awards: Oscar (Best Sound Mixing), Oscar (Best Director).",
+      "Movie 0001 was released in 1993. James Cameron directed Movie 0001. Zendaya, Natalie Portman, Matthew McConaughey acted in Movie 0001. Movie 0001 belongs to these genres: Psychological Thriller. Movie 0001 explores these themes: Technology, Power, Corruption, Time. Movie 0001 won these awards: None.",
+      "Movie 0103 was released in 1996. Peter Jackson directed Movie 0103. Zendaya, Anne Hathaway, Ryan Gosling, Al Pacino, Emma Stone acted in Movie 0103. Movie 0103 belongs to these genres: Action. Movie 0103 explores these themes: Technology, Time, Survival, Freedom. Movie 0103 won these awards: Oscar (Best Actress).",
+      "Movie 0124 was released in 1994. Sofia Coppola directed Movie 0124. Zendaya, Matthew McConaughey, Elliot Page, Tom Hardy acted in Movie 0124. Movie 0124 belongs to these genres: Psychological Thriller, Horror, Sci-Fi. Movie 0124 explores these themes: Technology, Reality, Love, Freedom. Movie 0124 won these awards: None.",
+      "Movie 0247 was released in 2021. Ridley Scott directed Movie 0247. Zendaya, Leonardo DiCaprio, Ryan Gosling, Denzel Washington, Florence Pugh, Jake Gyllenhaal acted in Movie 0247. Movie 0247 belongs to these genres: Psychological Thriller, Crime, Fantasy. Movie 0247 explores these themes: Technology, Power. Movie 0247 won these awards: Oscar (Best Sound Mixing)."
+    ],
+    "response": "**Recommendations:**\n\n1. **Movie 0001** - Shares themes: Technology, Power, Time.\n2. **Movie 0103** - Shares themes: Technology, Time, Freedom.\n3. **Movie 0124** - Shares themes: Technology, Freedom.\n4. **Movie 0247** - Shares themes: Technology, Power.",
+    "reference": "Good recommendations are Movie 0037, Movie 0001, Movie 0103, Movie 0124, and Movie 0247.",
+    "faithfulness": 0.5
+  }
+]

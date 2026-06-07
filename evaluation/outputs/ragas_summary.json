@@ -1,0 +1,21 @@
+{
+  "question_count": 25,
+  "metric_mode": "faithfulness",
+  "scored_systems": "both",
+  "vector_only": {
+    "faithfulness": 0.61,
+    "answer_relevancy": null,
+    "llm_context_precision_with_reference": null,
+    "context_recall": null,
+    "factual_correctness": null,
+    "hallucination_rate": 0.39
+  },
+  "hybrid_graphrag": {
+    "faithfulness": 0.7974358974400001,
+    "answer_relevancy": null,
+    "llm_context_precision_with_reference": null,
+    "context_recall": null,
+    "factual_correctness": null,
+    "hallucination_rate": 0.2025641025599999
+  }
+}
