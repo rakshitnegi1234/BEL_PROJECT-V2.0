@@ -16,7 +16,7 @@ A vector-only RAG system works for broad similarity, but it struggles with exact
 - LLM-based routing and response generation for a natural language interface.
 
 ## Architecture
-<img width="652" height="724" alt="image" src="https://github.com/user-attachments/assets/468607d2-364a-4ee5-b42f-8ced3c7a33ae" />
+<img width="652" height="724" alt="image" src="https://github.com/user-attachments/assets/b426b03d-6dfa-4bec-ba9a-de13fb632300" />
 
 
 
