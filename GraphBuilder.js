@@ -44,6 +44,7 @@ async function insertMovieGraph(entity) {
       }
 
       // Theme nodes + EXPLORES relationships
+      
       for (const themeName of entity.themes || []) {
         await tx.run(
           `MERGE (t:Theme {name: $name})

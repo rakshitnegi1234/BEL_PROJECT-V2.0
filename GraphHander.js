@@ -79,6 +79,7 @@ function getPatternForTraversal(step) {
 }
 
 function buildCypher(plan) {
+  
   if (!plan?.steps || !Array.isArray(plan.steps)) {
     throw new Error("Query plan must contain a steps array.");
   }
