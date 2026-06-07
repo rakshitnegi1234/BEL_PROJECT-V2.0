@@ -239,3 +239,24 @@ python evaluation/run_ragas_eval.py --metrics=faithfulness --systems=both
 
 Outputs are written under `evaluation/outputs/`. The final report is in `hallucination.md`.
 
+## Known Edge Cases and Limitations
+
+This project handles the main GraphRAG and recommendation flows, but some edge cases are not fully covered yet:
+
+- Misspelled names or titles: if the user misspells an actor, director, or movie name, Neo4j entity resolution may fail because graph lookup depends on exact or near-exact matches. Vector search can still return results, but accuracy may drop because the query embedding is based on noisy input.
+
+- Ambiguous entity names: if multiple movies, actors, or directors have similar names, the resolver may select the wrong graph node unless the query includes enough context.
+
+- Same-name entity collisions: the graph currently uses properties such as `Movie.title`, `Actor.name`, and `Director.name` as identities during `MERGE`. If two different movies, actors, or directors share the same name/title, they may be merged into one node during indexing or resolved incorrectly during querying. A production version should use stable unique IDs plus contextual disambiguation.
+
+- Missing entities in the source PDF: the system can only answer from entities extracted during indexing. If a movie, actor, award, genre, or relationship is missing from the dataset, graph answers may be incomplete.
+
+- Extraction errors during indexing: if the LLM extracts incorrect JSON or misses relationships from the PDF, those mistakes are stored in Neo4j and Pinecone and can affect later answers.
+
+- Unsupported graph query shapes: the graph handler uses a restricted query plan for safety. Very complex questions that need unsupported traversals, filters, or aggregations may be rejected instead of being converted into Cypher.
+
+- Vector top-k cutoff: recommendation queries first retrieve a fixed number of vector candidates. If the best answer is outside that candidate set, graph reranking cannot recover it.
+
+- Similarity without enough graph overlap: the reranking step works best when candidates share genres, themes, actors, or directors with the source movie. Sparse graph data can make reranking weaker.
+
+- External service failures: Neo4j, Pinecone, Gemini, and the NVIDIA-hosted LLM must all be reachable. API limits, network failures, or missing environment variables can stop indexing, querying, or evaluation.
