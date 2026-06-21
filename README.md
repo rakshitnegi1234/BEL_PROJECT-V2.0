@@ -16,48 +16,8 @@ A vector-only RAG system works for broad similarity, but it struggles with exact
 - LLM-based routing and response generation for a natural language interface.
 
 ## Architecture
+![Uploading image.png…]()
 
-```text
-movie.pdf
-   |
-   v
-PdfParse.js
-   |
-   v
-Entity_Extractor.js  -- Mistral structured extraction
-   |
-   v
-+--------------------+----------------------+
-|                                           |
-v                                           v
-GraphBuilder.js                            Vector.js
-Neo4j movie graph                          Pinecone vector index
-                                           Gemini embeddings
-
-
-User question
-   |
-   v
-RunQuery.js
-   |
-   v
-Entity_Resolver.js  -- extract and resolve entities against Neo4j
-   |
-   v
-QueryClassifier.js  -- graph vs similarity routing
-   |
-   +-----------------------------+
-   |                             |
-   v                             v
-GraphHander.js                  SimilarityHandler.js
-Neo4j query planning            Pinecone top-k search
-validated Cypher templates      Neo4j enrichment and reranking
-   |                             |
-   +-------------+---------------+
-                 |
-                 v
-          Final natural language answer
-```
 
 ## Why This Stack
 
