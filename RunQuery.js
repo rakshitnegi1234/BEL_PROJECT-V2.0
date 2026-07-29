@@ -2,78 +2,67 @@ import readline from "readline";
 import { closeConnections } from "./Config.js";
 import { resolveQueryEntities } from "./Entity_Resolver.js";
 import { classifyQuery } from "./QueryClassifier.js";
-import { handleGraphQuery } from "./GraphHander.js";
-import { handleSimilarityQuery } from "./SimilarityHandler.js";
+import { answerGraphQuery } from "./GraphHander.js";
+import { answerSimilarityQuery } from "./SimilarityHandler.js";
 
-async function processQuery(query) {
-  console.log("\n===========================================");
+async function answerUserQuery(userQuery) 
+{
+  const resolvedEntities = await resolveQueryEntities(userQuery);
 
-    // entity extraction is going on 
-  console.log("\nEntity resolution");
-
-  const resolved = await resolveQueryEntities(query);
-
-  console.log("\nClassification");
+  const queryType = await classifyQuery(userQuery, resolvedEntities);
 
 
-  const classification = await classifyQuery(query, resolved);
-  
-  console.log(`Type: ${classification.type}`);
-  console.log(`Reason: ${classification.reasoning}`);
+  const finalAnswer = queryType.type === "similarity"
+    ? await answerSimilarityQuery(userQuery, resolvedEntities)
+    : await answerGraphQuery(userQuery, resolvedEntities);
 
-  let answer;
-  if (classification.type === "similarity") {
-    console.log("\nSimilarity handler: Pinecone top 30, Neo4j enrichment, final top 10");
-    answer = await handleSimilarityQuery(query, resolved);
-  } else {
-    console.log("\nGraph handler: Neo4j factual query");
-    answer = await handleGraphQuery(query, resolved);
-  }
-
-  console.log("\n===========================================");
   console.log("Answer:\n");
-  console.log(answer);
-  console.log("\n===========================================");
+  console.log(finalAnswer);
 }
 
-async function startCLI() {
-  console.log("===========================================");
+async function startQueryCli()
+
+{
+  
   console.log("GraphRAG Movie Query System");
-  console.log("===========================================");
   console.log('Type your question. Type "exit" to quit.\n');
 
-  const rl = readline.createInterface({
+  const prompt = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
 
-  const ask = () => {
-    rl.question("You: ", async (input) => {
-      const query = input.trim();
+  const askQuestion = () => 
+    
+    {
+    prompt.question("You: ", async (userInput) => {
+      const userQuery = userInput.trim();
 
-      if (query.toLowerCase() === "exit") {
+      if (userQuery.toLowerCase() === "exit") {
         console.log("\nGoodbye.");
-        rl.close();
+        prompt.close();
         await closeConnections();
         process.exit(0);
       }
 
-      if (!query) {
-        ask();
+      if (!userQuery) {
+        askQuestion();
         return;
       }
 
+      // Keep the CLI alive after one bad question.
       try {
-        await processQuery(query);
-      } catch (err) {
-        console.error("\nError:", err.message);
+        await answerUserQuery(userQuery);
+      } catch (error) {
+        console.error("\nError:", error.message);
       }
 
-      ask();
+      askQuestion();
     });
   };
 
-  ask();
+  askQuestion();
 }
 
-startCLI();
+startQueryCli();
+

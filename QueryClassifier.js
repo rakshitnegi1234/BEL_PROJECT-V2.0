@@ -1,13 +1,13 @@
 import { invokeLLM } from "./Config.js";
 
-function cleanJson(raw) {
-  return raw.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+function cleanModelJson(modelText) {
+  return modelText.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
 }
 
-function heuristicClassification(query) {
-  
-  const lower = query.toLowerCase();
+function classifyWithRules(query) {
+  const lowerQuery = query.toLowerCase();
 
+  // These rules are the fallback when the LLM classifier fails or returns bad JSON.
   const graphPatterns = [
     "directed by",
     "acted in",
@@ -42,14 +42,14 @@ function heuristicClassification(query) {
     "similar films",
   ];
 
-  if (graphPatterns.some((pattern) => lower.includes(pattern))) {
+  if (graphPatterns.some((pattern) => lowerQuery.includes(pattern))) {
     return {
       type: "graph",
       reasoning: "The query asks for movies matching explicit graph facts or entity relationships.",
     };
   }
 
-  if (similarityPatterns.some((pattern) => lower.includes(pattern))) {
+  if (similarityPatterns.some((pattern) => lowerQuery.includes(pattern))) {
     return {
       type: "similarity",
       reasoning: "The query asks for movies similar in taste, theme, or viewing preference.",
@@ -64,17 +64,19 @@ function heuristicClassification(query) {
 
 async function classifyQuery(query, resolvedEntities) {
 
-  const entityContext = resolvedEntities.entities.length > 0
-    ? resolvedEntities.entities
-        .map((e) => `"${e.searchTerm}" is a ${e.label} with database name "${e.nodeName}"`)
-        .join("\n")
-    : "No entities were resolved from Neo4j.";
+  let entityContext = "No entities were resolved from Neo4j.";
+  
+  if (resolvedEntities.entities.length > 0) {
+    entityContext = resolvedEntities.entities
+      .map((entity) => `"${entity.searchTerm}" is a ${entity.label} with database name "${entity.nodeName}"`)
+      .join("\n");
+  }
 
-  const unresolvedContext = resolvedEntities.unresolved.length > 0
-    ? `\nUnresolved terms: ${resolvedEntities.unresolved.join(", ")}`
-    : "";
+  let unresolvedContext = "";
+  if (resolvedEntities.unresolved.length > 0) {
+    unresolvedContext = `\nUnresolved terms: ${resolvedEntities.unresolved.join(", ")}`;
+  }
 
-    
   const systemPrompt = `You classify movie questions for a GraphRAG system.
 
 Resolved entities:
@@ -127,19 +129,20 @@ Answer: {"type":"similarity","reasoning":"The query asks for recommendations bas
 Return only JSON. No markdown.`;
 
   try {
-    const raw = await invokeLLM(systemPrompt, query);
-    const parsed = JSON.parse(cleanJson(raw));
-    if (parsed.type === "graph" || parsed.type === "similarity") {
+    const modelText = await invokeLLM(systemPrompt, query);
+    const modelChoice = JSON.parse(cleanModelJson(modelText));
+
+    if (modelChoice.type === "graph" || modelChoice.type === "similarity") {
       return {
-        type: parsed.type,
-        reasoning: parsed.reasoning || "Classified by query intent.",
+        type: modelChoice.type,
+        reasoning: modelChoice.reasoning || "Classified by query intent.",
       };
     }
-  } catch (err) {
+  } catch (error) {
     console.warn("Classification failed, using rule-based fallback.");
   }
 
-  return heuristicClassification(query);
+  return classifyWithRules(query);
 }
 
 export { classifyQuery };

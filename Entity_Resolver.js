@@ -9,13 +9,14 @@ const NODE_TYPES = [
   { label: "Award", property: "name" },
 ];
 
-function cleanJson(raw) {
-  return raw.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+function cleanModelJson(modelText) {
+  return modelText.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
 }
 
-async function extractEntities(query) {
-
-  const systemPrompt = `Extract entity names from movie-related queries.
+async function findEntityNames(query) {
+  const systemPrompt = 
+  
+  `Extract entity names from movie-related queries.
 
 Extract person names, movie titles, genre names, theme names, and award names.
 Do not extract generic words such as "movies", "recommend", "find", "show", "list", or "good".
@@ -33,25 +34,28 @@ Examples:
 Return only a JSON array of strings. No markdown.`;
 
   try {
-    const raw = await invokeLLM(systemPrompt, query);
-    const parsed = JSON.parse(cleanJson(raw));
-    return Array.isArray(parsed) ? parsed.filter(Boolean) : [];
-  } catch (err) {
+
+    const modelText = await invokeLLM(systemPrompt, query);
+    const entityNames = JSON.parse(cleanModelJson(modelText));
+
+    if (!Array.isArray(entityNames)) {
+      return [];
+    }
+    return entityNames;
+  } catch (error) {
     console.warn("Entity extraction failed, continuing without resolved entities.");
     return [];
   }
 }
 
-async function resolveEntity(entityName) {
-
+async function findEntityMatches(entityName) {
   const session = driver.session({ defaultAccessMode: "READ" });
-  const matches = [];
+  const entityMatches = [];
 
   try {
     for (const { label, property } of NODE_TYPES) {
-      
+      // Exact matches are preferred, but partial matches help with names like "Nolan".
       const exactResult = await session.run(
-        
         `MATCH (n:${label})
          WHERE toLower(n.${property}) = toLower($name)
          RETURN n.${property} AS nodeName, labels(n)[0] AS label
@@ -61,7 +65,7 @@ async function resolveEntity(entityName) {
 
       if (exactResult.records.length > 0) {
         for (const record of exactResult.records) {
-          matches.push({
+          entityMatches.push({
             searchTerm: entityName,
             label: record.get("label"),
             nodeName: record.get("nodeName"),
@@ -80,7 +84,7 @@ async function resolveEntity(entityName) {
       );
 
       for (const record of partialResult.records) {
-        matches.push({
+        entityMatches.push({
           searchTerm: entityName,
           label: record.get("label"),
           nodeName: record.get("nodeName"),
@@ -88,21 +92,23 @@ async function resolveEntity(entityName) {
         });
       }
     }
-
-
   } finally {
     await session.close();
   }
 
-  const exactMatches = matches.filter((match) => match.matchType === "exact");
-  return exactMatches.length > 0 ? exactMatches : matches;
+  const exactMatches = entityMatches.filter((entityMatch) => entityMatch.matchType === "exact");
+  if (exactMatches.length > 0) {
+    return exactMatches;
+  }
+
+  return entityMatches;
 }
 
 async function resolveQueryEntities(query) {
 
   console.log("Step 1: extracting entities from query");
 
-  const entityNames = await extractEntities(query);
+  const entityNames = await findEntityNames(query);
 
   console.log(`Found terms: [${entityNames.join(", ")}]`);
 
@@ -112,24 +118,27 @@ async function resolveQueryEntities(query) {
 
   console.log("Step 2: resolving entities in Neo4j");
 
-  const resolved = [];
-  const unresolved = [];
+  const resolvedEntities = [];
+  const unresolvedNames = [];
 
-  for (const name of entityNames) {
-    const matches = await resolveEntity(name);
+  for (const entityName of entityNames) {
+    const entityMatches = await findEntityMatches(entityName);
 
-    if (matches.length > 0) {
-      for (const match of matches) {
-        resolved.push(match);
-        console.log(`"${name}" -> ${match.label} (${match.nodeName}) [${match.matchType}]`);
+    if (entityMatches.length > 0) {
+      
+      for (const entityMatch of entityMatches) {
+        resolvedEntities.push(entityMatch);
+        console.log(
+          `"${entityName}" -> ${entityMatch.label} (${entityMatch.nodeName}) [${entityMatch.matchType}]`
+        );
       }
     } else {
-      unresolved.push(name);
-      console.log(`"${name}" -> not found in graph`);
+      unresolvedNames.push(entityName);
+      console.log(`"${entityName}" -> not found in graph`);
     }
   }
 
-  return { query, entities: resolved, unresolved };
+  return { query, entities: resolvedEntities, unresolved: unresolvedNames };
 }
 
-export { resolveQueryEntities, resolveEntity };
+export { resolveQueryEntities, findEntityMatches };

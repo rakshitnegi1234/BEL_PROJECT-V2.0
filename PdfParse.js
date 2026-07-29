@@ -1,19 +1,20 @@
 import fs from "fs";
-import { PDFParse } from "pdf-parse"; 
+import { PDFParse } from "pdf-parse";
 
-async function parsePDF(pdfPath) {
+async function parseMoviePdf(pdfPath) {
 
-  const dataBuffer = fs.readFileSync(pdfPath);
-  const parser = new PDFParse({ data: dataBuffer });
-  const textResult = await parser.getText();
+
+
+  const pdfBuffer = fs.readFileSync(pdfPath);
+  const pdfParser = new PDFParse({ data: pdfBuffer });
+  const parseResult = await pdfParser.getText();
+
+  const pdfText = parseResult.text;
+
   
-  let rawText = textResult.text;
+  const cleanedText = pdfText.replace(/--\s*\d+\s*of\s*\d+\s*--/gi, "");
 
-  const cleanedText = rawText.replace(/--\s*\d+\s*of\s*\d+\s*--/gi, "");
-
-  return cleanedText; 
+  return cleanedText;
 }
 
-parsePDF("./movie.pdf")
-
-export { parsePDF };
+export { parseMoviePdf };
