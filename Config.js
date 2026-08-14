@@ -14,7 +14,7 @@ const driver = neo4j.driver(
 
 // PINECONE SETUP
 
-const pinecone = new Pinecone({ 
+const pinecone = new Pinecone({
   apiKey: process.env.PINECONE_API_KEY,
 });
 const pineconeIndex = pinecone.index(process.env.PINECONE_INDEX_NAME);
@@ -27,7 +27,7 @@ async function invokeLLM(systemPrompt, userPrompt) {
       "https://integrate.api.nvidia.com/v1/chat/completions",
       {
         model: "mistralai/mistral-medium-3.5-128b",
-        temperature: 0.2, 
+        temperature: 0.2,
         max_tokens: 8000,
         messages: [
           { role: "system", content: systemPrompt },
@@ -45,7 +45,7 @@ async function invokeLLM(systemPrompt, userPrompt) {
     let content = response.data.choices[0].message.content.trim();
 
     content = content.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
-    
+
     return content;
 
   } catch (error) {

@@ -33,22 +33,22 @@ async function extractMovieBatch(batchText, batchNumber, attempt = 1)
 
   console.log(`Sending Batch ${batchNumber} to Mistral (Attempt ${attempt}/${maxAttempts})`);
 
-  
+
   try {
 
     const modelText = await invokeLLM(EXTRACTION_PROMPT, batchText);
 
-     // COULD BE USED ARRAY.ISARRAY() 
-     
+     // COULD BE USED ARRAY.ISARRAY()
+
     const parsedMovies = JSON.parse(modelText);
 
     return parsedMovies;
   }
-   catch (error) 
-   
+   catch (error)
+
    {
-    if (attempt < maxAttempts) 
-      
+    if (attempt < maxAttempts)
+
       {
       console.warn(`Batch ${batchNumber} failed: ${error.message}. Retrying in 10s...`);
       await pause(10000);
@@ -60,14 +60,14 @@ async function extractMovieBatch(batchText, batchNumber, attempt = 1)
   }
 }
 
-async function extractMovieEntities(pdfText) 
+async function extractMovieEntities(pdfText)
 {
   const movieBlocks = pdfText.split(/----------------------------------------/);
   const movieTexts = movieBlocks.filter((text) => text.trim().length > 50);
 
   console.log(`\nSplit PDF into ${movieTexts.length} individual movie text blocks`);
 
-  
+
   const batchSize = 20;
   const movies = [];
 

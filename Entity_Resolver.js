@@ -15,8 +15,8 @@ function cleanModelJson(modelText) {
 
 async function findEntityNames(query) {
 
-  const systemPrompt = 
-  
+  const systemPrompt =
+
   `Extract entity names from movie-related queries.
 
 Extract person names, movie titles, genre names, theme names, and award names.
@@ -40,7 +40,7 @@ Return only a JSON array of strings. No markdown.`;
     const modelText = await invokeLLM(systemPrompt, query);
 
     const entityNames = JSON.parse(cleanModelJson(modelText));
-  
+
     return entityNames;
 
 
@@ -74,7 +74,7 @@ async function findEntityMatches(entityName) {
       if (exactResult.records.length > 0) {
 
         for (const record of exactResult.records) {
-          
+
           entityMatches.push({
             searchTerm: entityName,
             label: record.get("label"),
@@ -104,7 +104,7 @@ async function findEntityMatches(entityName) {
       }
     }
   }
-  
+
   finally {
     await session.close();
   }
@@ -149,8 +149,8 @@ async function resolveQueryEntities(query) {
       for (const entityMatch of entityMatches) {
         resolvedEntities.push(entityMatch);
       }
-    } 
-    
+    }
+
 
     else {
       unresolvedNames.push(entityName);

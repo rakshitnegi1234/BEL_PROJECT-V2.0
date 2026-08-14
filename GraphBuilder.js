@@ -8,13 +8,13 @@ async function saveMovieGraph(movieData) {
 
 
     await session.executeWrite(async (transaction) =>
-      
+
       {
          await transaction.run(
-          
+
         `MERGE (m:Movie {title: $title}) SET m.year = $year`,
         {
-          title: movieData.movie.title, 
+          title: movieData.movie.title,
           year: movieData.movie.year,
         }
       );
@@ -76,11 +76,11 @@ async function saveMovieGraph(movieData) {
 
       if (movieData.awards) {
 
-        for (const awardName of movieData.awards) 
-          
+        for (const awardName of movieData.awards)
+
           {
           const awardParts = awardName.match(/^(.+?)\s*\((.+)\)$/);
-          
+
           if (!awardParts) {
             continue;
           }
@@ -115,7 +115,7 @@ async function buildMovieGraph(movies) {
   const session = driver.session();
 
   try {
-    
+
     await session.run("CREATE INDEX IF NOT EXISTS FOR (m:Movie) ON (m.title)");
     await session.run("CREATE INDEX IF NOT EXISTS FOR (d:Director) ON (d.name)");
     await session.run("CREATE INDEX IF NOT EXISTS FOR (a:Actor) ON (a.name)");

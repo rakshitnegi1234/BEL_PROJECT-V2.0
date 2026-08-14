@@ -6,7 +6,7 @@ function pause(milliseconds) {
 
 function makeEmbeddingText(movieData) {
 
-  
+
   const parts = [
     `${movieData.movie.title} is a ${movieData.genres.join(", ")} movie released in ${movieData.movie.year}.`,
     `Directed by ${movieData.director.name}.`,
@@ -28,8 +28,8 @@ async function buildMovieVectors(movies) {
 
   const batchSize = 50;
 
-  for (let startIndex = 0; startIndex < moviesToIndex.length; startIndex += batchSize) 
-    
+  for (let startIndex = 0; startIndex < moviesToIndex.length; startIndex += batchSize)
+
     {
 
     const batchMovies = moviesToIndex.slice(startIndex, startIndex + batchSize);
@@ -47,11 +47,11 @@ async function buildMovieVectors(movies) {
      const movieTexts = batchMovies.map((movieData) => {
      return makeEmbeddingText(movieData);
   });
-    
+
     const vectors = await embedTexts(movieTexts);
 
     const vectorRecords = batchMovies.map((movieData, movieIndex) => ({
-      
+
       id: movieData.movie.title.replace(/\s+/g, "-").toLowerCase(),
       values: vectors[movieIndex],
       metadata: {

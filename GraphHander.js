@@ -17,7 +17,7 @@ const PATTERNS = {
 
 const OPERATORS = new Set(["=", "<>", ">", "<", ">=", "<=", "CONTAINS", "STARTS WITH"]);
 function getLabel(label) {
-  
+
   const config = LABELS[label];
   if (!config) throw new Error(`Unsupported label: ${label}`);
   return config;

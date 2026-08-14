@@ -43,8 +43,8 @@ async function getMovieContexts(movieTitles) {
 
     return movieTitles.map((title) => moviesByTitle.get(title)).filter(Boolean);
 
-  } 
-  
+  }
+
   finally {
 
     await session.close();

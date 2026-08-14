@@ -70,7 +70,7 @@ function classifyWithRules(query) {
 async function classifyQuery(query, resolvedEntities) {
 
   let entityContext = "No entities were resolved from Neo4j.";
-  
+
   if (resolvedEntities.entities.length > 0) {
 
       entityContext = resolvedEntities.entities
@@ -87,7 +87,7 @@ async function classifyQuery(query, resolvedEntities) {
   const systemPrompt = `You classify movie questions for a GraphRAG system.
 
 Resolved entities:
-${entityContext}   
+${entityContext}
 
 ${unresolvedContext}
 
@@ -151,8 +151,8 @@ Return only JSON. No markdown.`;
         reasoning: modelChoice.reasoning || "Classified by query intent.",
       };
     }
-  } 
-  
+  }
+
   catch (error) {
 
     console.warn("Classification failed, using rule-based fallback.");
