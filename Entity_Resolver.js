@@ -130,13 +130,12 @@ async function resolveQueryEntities(query) {
 
 
   if (entityNames.length === 0) {
-    return { query, entities: [], unresolved: [] };
+    return { query, entities: [] };
   }
 
   console.log("Step 2: resolving entities in Neo4j");
 
   const resolvedEntities = [];
-  const unresolvedNames = [];
 
   for (const entityName of entityNames) {
 
@@ -150,14 +149,9 @@ async function resolveQueryEntities(query) {
         resolvedEntities.push(entityMatch);
       }
     }
-
-
-    else {
-      unresolvedNames.push(entityName);
-    }
   }
 
-  return { query, entities: resolvedEntities, unresolved: unresolvedNames };
+  return { query, entities: resolvedEntities };
 }
 
 export { resolveQueryEntities, findEntityMatches };

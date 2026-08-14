@@ -78,18 +78,10 @@ async function classifyQuery(query, resolvedEntities) {
       .join("\n");
   }
 
-  let unresolvedContext = "";
-
-  if (resolvedEntities.unresolved.length > 0) {
-    unresolvedContext = `\nUnresolved terms: ${resolvedEntities.unresolved.join(", ")}`;
-  }
-
   const systemPrompt = `You classify movie questions for a GraphRAG system.
 
 Resolved entities:
 ${entityContext}
-
-${unresolvedContext}
 
 Return exactly one JSON object:
 {"type":"graph","reasoning":"one sentence"}

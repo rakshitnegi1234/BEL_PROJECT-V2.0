@@ -394,7 +394,7 @@ For entity extraction, the system retries the batch up to three times. For query
 
 ### What happens if an entity is not found?
 
-`Entity_Resolver.js` puts it in the unresolved list. The classifier and planner receive both resolved and unresolved context. The graph query may fail or return no rows if the needed entity cannot be resolved.
+`Entity_Resolver.js` ignores names that have no exact or partial graph match. The graph query may fail, return no rows, or become too broad when another entity from the same query does match.
 
 ### Why do you use exact database names from resolved entities?
 

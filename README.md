@@ -241,8 +241,8 @@ Outputs are written under `evaluation/outputs/`. The evaluation script also gene
 
 ## Known Edge Cases and Limitations
 
-- Partially unresolved queries: unresolved entity names are passed to the classifier and planner, but the current query flow does not deterministically stop or ask for clarification. A partially resolved query can therefore produce no result or an overly broad result.
-- Misspelled names or titles: graph lookup uses case-insensitive exact matching followed by `CONTAINS`, not typo-tolerant fuzzy matching. Misspellings can therefore remain unresolved.
+- Missing query entities: names with no exact or partial graph match are ignored, which can produce no result or an overly broad result when other entities do match.
+- Misspelled names or titles: graph lookup uses case-insensitive exact matching followed by `CONTAINS`, not typo-tolerant fuzzy matching. Misspellings can therefore produce no graph match.
 - Ambiguous entity names: the resolver searches several labels and can return multiple partial matches or choose the wrong entity type when the query lacks enough context.
 - Same-name entity collisions: properties such as `Movie.title`, `Actor.name`, and `Director.name` are used as identities during `MERGE`. Different entities sharing a title or name can be merged or resolved incorrectly. A production version should use stable unique IDs and uniqueness constraints.
 - Missing source entities: the system can answer only from entities and relationships extracted during indexing. Missing source data makes graph answers incomplete.
@@ -255,7 +255,7 @@ Outputs are written under `evaluation/outputs/`. The evaluation script also gene
 
 ## Possible Next Improvements
 
-- Add explicit handling for unresolved and ambiguous entities.
+- Add explicit handling for missing and ambiguous entities.
 - Extract expected entity labels, such as `Actor` or `Director`, alongside entity names.
 - Add schema validation for LLM-extracted movie JSON.
 - Add uniqueness constraints and stable IDs to the Neo4j data model.
