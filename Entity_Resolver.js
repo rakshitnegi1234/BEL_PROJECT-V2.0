@@ -14,6 +14,7 @@ function cleanModelJson(modelText) {
 }
 
 async function findEntityNames(query) {
+
   const systemPrompt = 
   
   `Extract entity names from movie-related queries.
@@ -33,28 +34,35 @@ Examples:
 
 Return only a JSON array of strings. No markdown.`;
 
+
   try {
 
     const modelText = await invokeLLM(systemPrompt, query);
-    const entityNames = JSON.parse(cleanModelJson(modelText));
 
-    if (!Array.isArray(entityNames)) {
-      return [];
-    }
+    const entityNames = JSON.parse(cleanModelJson(modelText));
+  
     return entityNames;
-  } catch (error) {
+
+
+  } catch (error)
+   {
+
     console.warn("Entity extraction failed, continuing without resolved entities.");
     return [];
   }
 }
 
+
 async function findEntityMatches(entityName) {
+
   const session = driver.session({ defaultAccessMode: "READ" });
   const entityMatches = [];
 
   try {
     for (const { label, property } of NODE_TYPES) {
+
       // Exact matches are preferred, but partial matches help with names like "Nolan".
+
       const exactResult = await session.run(
         `MATCH (n:${label})
          WHERE toLower(n.${property}) = toLower($name)
@@ -64,7 +72,9 @@ async function findEntityMatches(entityName) {
       );
 
       if (exactResult.records.length > 0) {
+
         for (const record of exactResult.records) {
+          
           entityMatches.push({
             searchTerm: entityName,
             label: record.get("label"),
@@ -84,6 +94,7 @@ async function findEntityMatches(entityName) {
       );
 
       for (const record of partialResult.records) {
+
         entityMatches.push({
           searchTerm: entityName,
           label: record.get("label"),
@@ -92,11 +103,14 @@ async function findEntityMatches(entityName) {
         });
       }
     }
-  } finally {
+  }
+  
+  finally {
     await session.close();
   }
 
   const exactMatches = entityMatches.filter((entityMatch) => entityMatch.matchType === "exact");
+
   if (exactMatches.length > 0) {
     return exactMatches;
   }
@@ -104,13 +118,16 @@ async function findEntityMatches(entityName) {
   return entityMatches;
 }
 
+
+
+
+
 async function resolveQueryEntities(query) {
 
   console.log("Step 1: extracting entities from query");
 
   const entityNames = await findEntityNames(query);
 
-  console.log(`Found terms: [${entityNames.join(", ")}]`);
 
   if (entityNames.length === 0) {
     return { query, entities: [], unresolved: [] };
@@ -122,19 +139,21 @@ async function resolveQueryEntities(query) {
   const unresolvedNames = [];
 
   for (const entityName of entityNames) {
+
+
     const entityMatches = await findEntityMatches(entityName);
 
     if (entityMatches.length > 0) {
-      
+
+
       for (const entityMatch of entityMatches) {
         resolvedEntities.push(entityMatch);
-        console.log(
-          `"${entityName}" -> ${entityMatch.label} (${entityMatch.nodeName}) [${entityMatch.matchType}]`
-        );
       }
-    } else {
+    } 
+    
+
+    else {
       unresolvedNames.push(entityName);
-      console.log(`"${entityName}" -> not found in graph`);
     }
   }
 

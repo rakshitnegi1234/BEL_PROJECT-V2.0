@@ -7,16 +7,13 @@ import { answerSimilarityQuery } from "./SimilarityHandler.js";
 
 async function answerUserQuery(userQuery) 
 {
-  const resolvedEntities = await resolveQueryEntities(userQuery);
 
+  const resolvedEntities = await resolveQueryEntities(userQuery);
   const queryType = await classifyQuery(userQuery, resolvedEntities);
 
+const finalAnswer = queryType.type === "similarity" ? await answerSimilarityQuery(userQuery, resolvedEntities) : await answerGraphQuery(userQuery, resolvedEntities);
 
-  const finalAnswer = queryType.type === "similarity"
-    ? await answerSimilarityQuery(userQuery, resolvedEntities)
-    : await answerGraphQuery(userQuery, resolvedEntities);
-
-  console.log("Answer:\n");
+  console.log("Your Answer Here :\n");
   console.log(finalAnswer);
 }
 
@@ -39,7 +36,7 @@ async function startQueryCli()
       const userQuery = userInput.trim();
 
       if (userQuery.toLowerCase() === "exit") {
-        console.log("\nGoodbye.");
+        console.log("\Exiting.");
         prompt.close();
         await closeConnections();
         process.exit(0);

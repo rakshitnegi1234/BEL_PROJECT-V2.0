@@ -17,6 +17,9 @@ function makeEmbeddingText(movieData) {
   return parts.join(" ");
 }
 
+
+
+
 async function buildMovieVectors(movies) {
 
   const moviesToIndex = movies.slice(0, 200);
@@ -33,7 +36,7 @@ async function buildMovieVectors(movies) {
 
     const batchNumber = Math.floor(startIndex / batchSize) + 1;
 
-    console.log(`Embedding batch ${batchNumber}...`);
+    console.log(`Embedding batch ${batchNumber}`);
 
     // geminir ate limit RPM
     if (startIndex > 0) {
@@ -48,6 +51,7 @@ async function buildMovieVectors(movies) {
     const vectors = await embedTexts(movieTexts);
 
     const vectorRecords = batchMovies.map((movieData, movieIndex) => ({
+      
       id: movieData.movie.title.replace(/\s+/g, "-").toLowerCase(),
       values: vectors[movieIndex],
       metadata: {

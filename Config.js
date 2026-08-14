@@ -6,15 +6,13 @@ import { GoogleGenAI } from "@google/genai";
 
 dotenv.config();
 
-// 1. NEO4J SETUP
+//  NEO4J SETUP
 const driver = neo4j.driver(
   process.env.NEO4J_URI,
   neo4j.auth.basic(process.env.NEO4J_USERNAME, process.env.NEO4J_PASSWORD)
 );
 
-// 2. PINECONE SETUP
-// const pinecone = new Pinecone({ apiKey: process.env.PINECONE_API_KEY });
-// const pineconeIndex = pinecone.index(process.env.PINECONE_INDEX_NAME);
+// PINECONE SETUP
 
 const pinecone = new Pinecone({ 
   apiKey: process.env.PINECONE_API_KEY,
@@ -45,7 +43,9 @@ async function invokeLLM(systemPrompt, userPrompt) {
     );
 
     let content = response.data.choices[0].message.content.trim();
+
     content = content.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
+    
     return content;
 
   } catch (error) {
@@ -54,7 +54,7 @@ async function invokeLLM(systemPrompt, userPrompt) {
   }
 }
 
-// 4. GEMINI EMBEDDINGS (Google GenAI SDK)
+// GEMINI EMBEDDINGS (Google GenAI SDK)
 const genai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 async function embedText(text) {
@@ -64,6 +64,7 @@ async function embedText(text) {
   });
   return response.embeddings[0].values;
 }
+
 
 async function embedTexts(texts) {
   const response = await genai.models.embedContent({

@@ -6,15 +6,17 @@ import { closeConnections } from "./Config.js";
 
 async function runIndexingPipeline(pdfPath) {
 
+
+
   console.log("GraphRAG Indexing Pipeline");
 
   try {
     
-    console.log(" STEP 1: Parse PDF Locally ");
+    console.log("STEP 1: Parse PDF Locally");
     const pdfText = await parseMoviePdf(pdfPath);
 
 
-    console.log("\nSTEP 2: Extract Entities (Mistral) --");
+    console.log("STEP 2: Extract Entities From PDF ");
     const movies = await extractMovieEntities(pdfText);
 
 
@@ -25,8 +27,9 @@ async function runIndexingPipeline(pdfPath) {
 
     console.log("\nSTEP 4: Build Vector Store (Pinecone)");
     await buildMovieVectors(movies);
-    console.log("\nIndexing complete.");
 
+
+    console.log("\nIndexing complete.");
   } catch (error) 
   
   {

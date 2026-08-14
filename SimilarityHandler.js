@@ -3,61 +3,14 @@ import { driver, embedText, invokeLLM, pineconeIndex } from "./Config.js";
 const VECTOR_TOP_K = 30;
 const FINAL_RECOMMENDATION_COUNT = 10;
 
-function normalizeTitleForComparison(title) {
-  return String(title || "")
-    .toLowerCase()
-    .replace(/\(\d{4}\)/g, "")
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
-
-function toPlainValue(value) {
-  return value && typeof value === "object" && typeof value.toNumber === "function"
-    ? value.toNumber()
-    : value;
-}
-
-function readMatchTitle(vectorMatch) {
-  return vectorMatch.metadata?.title || null;
-}
-
-function isRequestedSourceTitle(candidateTitle, sourceTerms) {
-  const normalizedCandidate = normalizeTitleForComparison(candidateTitle);
-  return sourceTerms.some((sourceTerm) => {
-    const normalizedSourceTerm = normalizeTitleForComparison(sourceTerm);
-    return normalizedSourceTerm && normalizedCandidate === normalizedSourceTerm;
-  });
-}
-
-function getRequestedSourceTerms(sourceMovie, resolvedEntities) {
-  return [
-    ...new Set(
-      [sourceMovie?.nodeName, sourceMovie?.searchTerm, ...(resolvedEntities.unresolved || [])].filter(Boolean)
-    ),
-  ];
-}
-
-function movieFromRecord(record) {
-  return {
-    title: record.get("title"),
-    year: toPlainValue(record.get("year")),
-    directors: record.get("directors"),
-    actors: record.get("actors"),
-    genres: record.get("genres"),
-    themes: record.get("themes"),
-  };
-}
-
 async function getMovieContexts(movieTitles) {
-  const uniqueTitles = [...new Set(movieTitles.filter(Boolean))];
-  if (uniqueTitles.length === 0) {
-    return [];
-  }
+
+  if (!movieTitles.length) return [];
 
   const session = driver.session({ defaultAccessMode: "READ" });
 
   try {
-    const queryResult = await session.run(
+    const result = await session.run(
       `MATCH (m:Movie)
        WHERE m.title IN $titles
        OPTIONAL MATCH (d:Director)-[:DIRECTED]->(m)
@@ -70,48 +23,69 @@ async function getMovieContexts(movieTitles) {
               collect(DISTINCT a.name) AS actors,
               collect(DISTINCT g.name) AS genres,
               collect(DISTINCT t.name) AS themes`,
-      { titles: uniqueTitles }
+      { titles: movieTitles }
     );
 
-    const moviesByTitle = new Map(queryResult.records.map((record) => [record.get("title"), movieFromRecord(record)]));
+      const moviesByTitle = new Map(result.records.map((record) => {
 
-    return uniqueTitles.map((title) => moviesByTitle.get(title)).filter(Boolean);
-  } finally {
+        const movie = {
+          title: record.get("title"),
+          year: record.get("year"),
+          directors: record.get("directors"),
+          actors: record.get("actors"),
+          genres: record.get("genres"),
+          themes: record.get("themes"),
+        };
+
+        return [movie.title, movie];
+      })
+    );
+
+    return movieTitles.map((title) => moviesByTitle.get(title)).filter(Boolean);
+
+  } 
+  
+  finally {
+
     await session.close();
   }
 }
 
-function countOverlap(leftItems = [], rightItems = []) {
-  const lowerRightItems = new Set(rightItems.map((item) => String(item).toLowerCase()));
-  return leftItems.filter((item) => lowerRightItems.has(String(item).toLowerCase())).length;
-}
+function rankCandidates(candidates, vectorMatches, sourceMovie) {
 
-function rankCandidates(candidates, vectorMatches, sourceContext) {
-  const matchesByTitle = new Map(
-    vectorMatches.map((match) => [readMatchTitle(match), match]).filter(([title]) => title)
+  const matchesByTitle = new Map(vectorMatches.map((match) => [match.metadata?.title, match]).filter(([title]) => title)
   );
 
+  const sourceGenres = sourceMovie?.genres || [];
+
+  const sourceThemes = sourceMovie?.themes || [];
+
   return candidates
-    .map((candidate) => {
-      const match = matchesByTitle.get(candidate.title);
+    .map((candidate) => {const vectorMatch = matchesByTitle.get(candidate.title);
+
       return {
         ...candidate,
-        vectorScore: match?.score || 0,
-        embeddedText: match?.metadata?.text || "",
-        genreOverlap: countOverlap(candidate.genres, sourceContext?.genres || []),
-        themeOverlap: countOverlap(candidate.themes, sourceContext?.themes || []),
+        vectorScore: vectorMatch?.score || 0,
+        embeddedText: vectorMatch?.metadata?.text || "",
+        genreOverlap: candidate.genres.filter((genre) => sourceGenres.includes(genre)).length,
+        themeOverlap: candidate.themes.filter((theme) => sourceThemes.includes(theme)).length,
       };
-    })
-    .sort(
-      (leftMovie, rightMovie) =>
-        rightMovie.genreOverlap - leftMovie.genreOverlap ||
-        rightMovie.themeOverlap - leftMovie.themeOverlap ||
-        rightMovie.vectorScore - leftMovie.vectorScore
+    }).sort((left, right) =>
+        right.genreOverlap - left.genreOverlap ||
+        right.themeOverlap - left.themeOverlap ||
+        right.vectorScore - left.vectorScore
     );
 }
 
-async function searchVectorIndex(queryText) {
-  const queryVector = await embedText(queryText);
+
+async function answerSimilarityQuery(query, resolvedEntities) {
+
+  const sourceMovieTitle = resolvedEntities.entities.find((entity) => entity.label === "Movie")?.nodeName || null;
+
+  console.log(sourceMovieTitle? `Finding movies similar to "${sourceMovieTitle}"`: "No source movie was resolved. Using the full query for vector search."
+  );
+
+  const queryVector = await embedText(sourceMovieTitle || query);
 
   const searchResults = await pineconeIndex.query({
     vector: queryVector,
@@ -119,75 +93,56 @@ async function searchVectorIndex(queryText) {
     includeMetadata: true,
   });
 
-  return searchResults.matches || [];
-}
 
-async function answerSimilarityQuery(query, resolvedEntities) {
-  const sourceMovie = resolvedEntities.entities.find((entity) => entity.label === "Movie");
-  const sourceMovieTitle = sourceMovie?.nodeName || null;
-  const requestedSourceTerms = getRequestedSourceTerms(sourceMovie, resolvedEntities);
+  const vectorMatches = searchResults.matches || [];
 
-  console.log(
-    sourceMovieTitle
-      ? `Finding movies similar to "${sourceMovieTitle}"`
-      : "No source movie was resolved. Using the full query for vector search."
+  if (!vectorMatches.length) return "I could not find matching movies.";
+
+
+  const candidateTitles = vectorMatches.map((match) => match.metadata?.title).filter((title) => title && title !== sourceMovieTitle);
+
+  const titlesToFetch = sourceMovieTitle? [sourceMovieTitle, ...candidateTitles]: candidateTitles;
+
+  const movieContexts = await getMovieContexts(titlesToFetch);
+
+  const sourceMovie = sourceMovieTitle? movieContexts.find((movie) => movie.title === sourceMovieTitle) || null: null;
+
+  const candidates = movieContexts.filter((movie) => movie.title !== sourceMovieTitle);
+
+  if (!candidates.length) {return "I found vector matches, but I could not fetch their graph details from Neo4j.";
+  }
+
+  const topCandidates = rankCandidates(
+    candidates,
+    vectorMatches,
+    sourceMovie
+  ).slice(0, VECTOR_TOP_K);
+
+
+  const recommendationCount = Math.min(
+    FINAL_RECOMMENDATION_COUNT,
+    topCandidates.length
   );
 
-  console.log(`Searching Pinecone top ${VECTOR_TOP_K}`);
-  const vectorMatches = await searchVectorIndex(sourceMovieTitle || query);
+ const sourceDetails = sourceMovie? JSON.stringify(sourceMovie, null, 2): "No source movie was found.";
 
-  if (vectorMatches.length === 0) {
-    return "I could not find matching movies.";
-  }
+  const instructions = `Recommend up to ${recommendationCount} movies.
+Use only the supplied candidates and never recommend the source movie itself.
+Prefer movies with matching genres and themes, then consider semantic similarity.
+Return a numbered list with one short reason per movie.
+Do not mention databases, vectors, scores, or other implementation details.`;
 
-  const candidateTitles = vectorMatches
-    .map(readMatchTitle)
-    .filter((title) => title && !isRequestedSourceTitle(title, requestedSourceTerms));
-
-  console.log(`Pinecone returned ${candidateTitles.length} candidate titles`);
-
-  const movieContexts = await getMovieContexts(sourceMovieTitle ? [sourceMovieTitle, ...candidateTitles] : candidateTitles);
-  const sourceContext = sourceMovieTitle
-    ? movieContexts.find((movie) => movie.title === sourceMovieTitle) || null
-    : null;
-  const graphCandidates = movieContexts.filter((movie) => !isRequestedSourceTitle(movie.title, requestedSourceTerms));
-
-  if (graphCandidates.length === 0) {
-    return "I found vector matches, but I could not fetch their graph details from Neo4j.";
-  }
-
-  const rankedCandidates = rankCandidates(graphCandidates, vectorMatches, sourceContext).slice(0, VECTOR_TOP_K);
-  console.log(`Neo4j returned ${rankedCandidates.length} enriched candidates`);
-
-  const sourcePromptText = sourceContext
-    ? `Source movie:\n${JSON.stringify(sourceContext, null, 2)}`
-    : requestedSourceTerms.length
-      ? `Requested source movie terms:\n${JSON.stringify(requestedSourceTerms, null, 2)}
-
-The source movie was not resolved in the graph. Do not recommend the requested source movie itself.`
-      : "No single source movie was resolved. Rank by the user's query intent.";
-
-  const systemPrompt = `You are a movie recommendation assistant.
-Always recommend exactly ${FINAL_RECOMMENDATION_COUNT} movies if at least ${FINAL_RECOMMENDATION_COUNT} candidates are available.
-Use only movies present in the candidate list.
-Use the source movie, graph facts, genre overlap, theme overlap, and candidate text to rank the best matches.
-Do not include the source movie itself as a recommendation.
-If fewer than ${FINAL_RECOMMENDATION_COUNT} candidates are available, return only the available candidates.
-Do not mention databases, Pinecone, Neo4j, vectors, scores, JSON, or technical details.
-Return a numbered list with a short reason for each movie.`;
-
-  const userPrompt = `User query:
+const context = `Question:
 ${query}
 
-${sourcePromptText}
+Source movie:
 
-Candidates from vector search enriched with graph facts:
-${JSON.stringify(rankedCandidates, null, 2)}
+${sourceDetails}
 
-Return the final top ${Math.min(FINAL_RECOMMENDATION_COUNT, rankedCandidates.length)} recommendations.`;
+Candidate movies: ${JSON.stringify(topCandidates, null, 2)}`;
 
-  const finalAnswer = await invokeLLM(systemPrompt, userPrompt);
-  return finalAnswer.trim();
+  const answer = await invokeLLM(instructions, context);
+  return answer.trim();
 }
 
 export { answerSimilarityQuery };

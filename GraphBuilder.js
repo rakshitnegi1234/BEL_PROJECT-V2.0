@@ -5,13 +5,16 @@ async function saveMovieGraph(movieData) {
   const session = driver.session();
 
   try {
+
+
     await session.executeWrite(async (transaction) =>
       
       {
-      await transaction.run(
+         await transaction.run(
+          
         `MERGE (m:Movie {title: $title}) SET m.year = $year`,
         {
-          title: movieData.movie.title,
+          title: movieData.movie.title, 
           year: movieData.movie.year,
         }
       );
@@ -100,7 +103,13 @@ async function saveMovieGraph(movieData) {
   }
 }
 
+
+
+
+
 async function buildMovieGraph(movies) {
+
+
   console.log(`\nBuilding graph for ${movies.length} movies...\n`);
 
   const session = driver.session();

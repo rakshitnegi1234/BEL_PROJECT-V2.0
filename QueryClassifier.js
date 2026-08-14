@@ -62,17 +62,24 @@ function classifyWithRules(query) {
   };
 }
 
+
+
+
+
+
 async function classifyQuery(query, resolvedEntities) {
 
   let entityContext = "No entities were resolved from Neo4j.";
   
   if (resolvedEntities.entities.length > 0) {
-    entityContext = resolvedEntities.entities
+
+      entityContext = resolvedEntities.entities
       .map((entity) => `"${entity.searchTerm}" is a ${entity.label} with database name "${entity.nodeName}"`)
       .join("\n");
   }
 
   let unresolvedContext = "";
+
   if (resolvedEntities.unresolved.length > 0) {
     unresolvedContext = `\nUnresolved terms: ${resolvedEntities.unresolved.join(", ")}`;
   }
@@ -80,7 +87,9 @@ async function classifyQuery(query, resolvedEntities) {
   const systemPrompt = `You classify movie questions for a GraphRAG system.
 
 Resolved entities:
-${entityContext}${unresolvedContext}
+${entityContext}   
+
+${unresolvedContext}
 
 Return exactly one JSON object:
 {"type":"graph","reasoning":"one sentence"}
@@ -104,6 +113,7 @@ Definitions:
 - same vibe/style/theme as a movie
 
 Important edge rule:
+
 If the user says "recommend" but also gives an exact factual condition such as "where Christopher Nolan works", "directed by Nolan", or "with Zendaya", classify as "graph".
 The word "recommend" alone does not mean similarity. Similarity requires "similar", "like", "liked", "same vibe", or "watch next after".
 
@@ -128,21 +138,28 @@ Answer: {"type":"similarity","reasoning":"The query asks for recommendations bas
 
 Return only JSON. No markdown.`;
 
+
   try {
+
     const modelText = await invokeLLM(systemPrompt, query);
     const modelChoice = JSON.parse(cleanModelJson(modelText));
 
     if (modelChoice.type === "graph" || modelChoice.type === "similarity") {
+
       return {
         type: modelChoice.type,
         reasoning: modelChoice.reasoning || "Classified by query intent.",
       };
     }
-  } catch (error) {
+  } 
+  
+  catch (error) {
+
     console.warn("Classification failed, using rule-based fallback.");
   }
 
   return classifyWithRules(query);
+
 }
 
 export { classifyQuery };

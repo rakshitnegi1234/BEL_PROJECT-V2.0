@@ -3,10 +3,10 @@ import { PDFParse } from "pdf-parse";
 
 async function parseMoviePdf(pdfPath) {
 
-
-
   const pdfBuffer = fs.readFileSync(pdfPath);
+
   const pdfParser = new PDFParse({ data: pdfBuffer });
+  
   const parseResult = await pdfParser.getText();
 
   const pdfText = parseResult.text;
